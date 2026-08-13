@@ -6,14 +6,14 @@ Web application for sports facility reservations, individual training scheduling
 
 ( Layer : Technology )
 
-Frontend           Angular 20, Chart.js, Leaflet
-Backend            NodeJS, Express, Mongoose
-Database           MongoDB
-Authentication     bcrypt, localStorage
-File upload        Multer
-PDF reports        PDFKit
-Avatars            DiceBear API
-Maps               Leaflet + OpenStreetMap
+Frontend           Angular 20, Chart.js, Leaflet  
+Backend            NodeJS, Express, Mongoose  
+Database           MongoDB  
+Authentication     bcrypt, localStorage  
+File upload        Multer  
+PDF reports        PDFKit  
+Avatars            DiceBear API  
+Maps               Leaflet + OpenStreetMap  
 
 ## User Roles
 
@@ -59,7 +59,7 @@ Maps               Leaflet + OpenStreetMap
 
 ### 1. Clone
 
-git clone https://github.com/DaniloMilovanovic/SportSphere-Hub.git
+git clone https://github.com/DaniloMilovanovic/SportSphere-Hub.git  
 cd SportSphere-Hub
 
 ### 2. Start MongoDB
@@ -72,18 +72,18 @@ Create a database sportsphere_hub and import JSON files from db/folder into coll
 
 ### 4. Backend
 
-cd backend_Node
-npm install
-npm run build
-npm start
+cd backend_Node  
+npm install  
+npm run build  
+npm start  
 
 Backend: http://localhost:4000
 
 ### 5. Frontend
 
-cd frontend
-npm install
-ng serve
+cd frontend  
+npm install  
+ng serve  
 
 Frontend: http://localhost:4200
 
