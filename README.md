@@ -4,16 +4,15 @@ Web application for sports facility reservations, individual training scheduling
 
 ## Technologies
 
-( Layer : Technology )
 
-Frontend           Angular 20, Chart.js, Leaflet  
-Backend            NodeJS, Express, Mongoose  
-Database           MongoDB  
-Authentication     bcrypt, localStorage  
-File upload        Multer  
-PDF reports        PDFKit  
-Avatars            DiceBear API  
-Maps               Leaflet + OpenStreetMap  
+Frontend: Angular 20, Chart.js, Leaflet  
+Backend: NodeJS, Express, Mongoose  
+Database: MongoDB  
+Authentication: bcrypt, localStorage  
+File upload: Multer  
+PDF reports: PDFKit  
+Avatars: DiceBear API  
+Maps: Leaflet + OpenStreetMap  
 
 ## User Roles
 
