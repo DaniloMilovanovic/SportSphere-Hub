@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.angular/
+build/
+
+# Environment
+.env
+.env.local
+.env.production
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Angular
+frontend/.angular/
+frontend/dist/
+
+# Backend build
+backend_Node/dist/
+
+# Database backups
+*.zip
+*.tar.gz
+
+# Project specific
+predaja/
+2025_2026_IR3PIA_Projekat_za_junjul.pdf
