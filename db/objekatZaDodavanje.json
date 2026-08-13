@@ -1,0 +1,20 @@
+{
+    "name": "Sportski centar Test",
+    "city": "Beograd",
+    "address": "Test adresa 123",
+    "description": "Test objekat",
+    "sports": ["Fudbal", "Košarka"],
+    "pricePerHour": 2000,
+    "workingHours": { "open": "08:00", "close": "22:00" },
+    "maxNoShowsBeforeBlock": 3,
+    "courts": [
+        {
+            "name": "Teren 1",
+            "type": "otvoreni_teren",
+            "capacity": 22,
+            "sport": "Fudbal",
+            "equipmentDescription": "Test oprema",
+            "status": "active"
+        }
+    ]
+}

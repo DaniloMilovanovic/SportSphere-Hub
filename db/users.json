@@ -1,0 +1,232 @@
+[
+  {
+    "username": "admin",
+    "password": "admin",
+    "email": "admin@sportsphere.com",
+    "firstName": "Admin",
+    "lastName": "Sistema",
+    "phone": "+381641234567",
+    "profileImage": "default-avatar.png",
+    "role": "administrator",
+    "favoriteSports": [],
+    "status": "active",
+    "employeeInfo": null,
+    "resetToken": null,
+    "resetTokenExpires": null,
+    "facilityBlocks": [],
+    "createdAt": { "$date": "2026-01-01T00:00:00.000Z" },
+    "updatedAt": { "$date": "2026-01-01T00:00:00.000Z" }
+  },
+  {
+    "username": "marko123",
+    "password": "marko123",
+    "email": "marko@example.com",
+    "firstName": "Marko",
+    "lastName": "Petrović",
+    "phone": "+381642345678",
+    "profileImage": "default-avatar.png",
+    "role": "sportista",
+    "favoriteSports": ["Fudbal", "Košarka"],
+    "status": "active",
+    "employeeInfo": null,
+    "resetToken": null,
+    "resetTokenExpires": null,
+    "facilityBlocks": [],
+    "createdAt": { "$date": "2026-02-15T10:00:00.000Z" },
+    "updatedAt": { "$date": "2026-05-20T10:00:00.000Z" }
+  },
+  {
+    "username": "ana88",
+    "password": "ana88",
+    "email": "ana@example.com",
+    "firstName": "Ana",
+    "lastName": "Jovanović",
+    "phone": "+381643456789",
+    "profileImage": "default-avatar.png",
+    "role": "sportista",
+    "favoriteSports": ["Tenis", "Plivanje", "Badminton"],
+    "status": "active",
+    "employeeInfo": null,
+    "resetToken": null,
+    "resetTokenExpires": null,
+    "facilityBlocks": [],
+    "createdAt": { "$date": "2026-03-10T10:00:00.000Z" },
+    "updatedAt": { "$date": "2026-06-01T10:00:00.000Z" }
+  },
+  {
+    "username": "nikola_zap",
+    "password": "nikola123",
+    "email": "nikola@sportsphere.com",
+    "firstName": "Nikola",
+    "lastName": "Nikolić",
+    "phone": "+381654567890",
+    "profileImage": "default-avatar.png",
+    "role": "zaposleni",
+    "favoriteSports": [],
+    "status": "pending",
+    "employeeInfo": {
+      "facilityName": "Sportski centar Voždovac",
+      "facilityAddress": "Bulevar oslobođenja 215",
+      "registrationNumber": "12345678",
+      "pib": "123456789"
+    },
+    "resetToken": null,
+    "resetTokenExpires": null,
+    "facilityBlocks": [],
+    "createdAt": { "$date": "2026-01-20T10:00:00.000Z" },
+    "updatedAt": { "$date": "2026-01-20T10:00:00.000Z" }
+  },
+  {
+    "username": "jelena_zap",
+    "password": "jelena123",
+    "email": "jelena@example.com",
+    "firstName": "Jelena",
+    "lastName": "Đorđević",
+    "phone": "+381665678901",
+    "profileImage": "default-avatar.png",
+    "role": "zaposleni",
+    "favoriteSports": [],
+    "status": "pending",
+    "employeeInfo": {
+      "facilityName": "Arena Novi Beograd",
+      "facilityAddress": "Jurija Gagarina 78",
+      "registrationNumber": "87654321",
+      "pib": "987654321"
+    },
+    "resetToken": null,
+    "resetTokenExpires": null,
+    "facilityBlocks": [],
+    "createdAt": { "$date": "2026-02-01T10:00:00.000Z" },
+    "updatedAt": { "$date": "2026-02-01T10:00:00.000Z" }
+  },
+  {
+    "username": "petar_sport",
+    "password": "petar123",
+    "email": "petar@example.com",
+    "firstName": "Petar",
+    "lastName": "Stanković",
+    "phone": "+381676789012",
+    "profileImage": "default-avatar.png",
+    "role": "sportista",
+    "favoriteSports": ["Fudbal", "Rukomet"],
+    "status": "active",
+    "employeeInfo": null,
+    "resetToken": null,
+    "resetTokenExpires": null,
+    "facilityBlocks": [
+      {
+        "facilityName": "Sportski centar Voždovac",
+        "noShowCount": 1,
+        "blockedUntil": null
+      }
+    ],
+    "createdAt": { "$date": "2026-04-05T10:00:00.000Z" },
+    "updatedAt": { "$date": "2026-05-15T10:00:00.000Z" }
+  },
+  {
+    "username": "marija_sport",
+    "password": "marija123",
+    "email": "marija@example.com",
+    "firstName": "Marija",
+    "lastName": "Todorović",
+    "phone": "+381687890123",
+    "profileImage": "default-avatar.png",
+    "role": "sportista",
+    "favoriteSports": ["Odbojka", "Tenis"],
+    "status": "active",
+    "employeeInfo": null,
+    "resetToken": null,
+    "resetTokenExpires": null,
+    "facilityBlocks": [],
+    "createdAt": { "$date": "2026-05-12T10:00:00.000Z" },
+    "updatedAt": { "$date": "2026-05-12T10:00:00.000Z" }
+  },
+  {
+    "username": "dusan_sport",
+    "password": "dusan123",
+    "email": "dusan@example.com",
+    "firstName": "Dušan",
+    "lastName": "Milić",
+    "phone": "+381697890124",
+    "profileImage": "default-avatar.png",
+    "role": "sportista",
+    "favoriteSports": ["Košarka"],
+    "status": "blocked",
+    "employeeInfo": null,
+    "resetToken": null,
+    "resetTokenExpires": null,
+    "facilityBlocks": [
+      {
+        "facilityName": "Arena Novi Beograd",
+        "noShowCount": 3,
+        "blockedUntil": { "$date": "2026-07-01T00:00:00.000Z" }
+      }
+    ],
+    "createdAt": { "$date": "2026-01-10T10:00:00.000Z" },
+    "updatedAt": { "$date": "2026-06-01T10:00:00.000Z" }
+  },
+  {
+    "username": "tamara_sport",
+    "password": "tamara123",
+    "email": "tamara@example.com",
+    "firstName": "Tamara",
+    "lastName": "Kostić",
+    "phone": "+381607890125",
+    "profileImage": "default-avatar.png",
+    "role": "sportista",
+    "favoriteSports": ["Plivanje", "Atletika"],
+    "status": "active",
+    "employeeInfo": null,
+    "resetToken": null,
+    "resetTokenExpires": null,
+    "facilityBlocks": [],
+    "createdAt": { "$date": "2026-03-20T10:00:00.000Z" },
+    "updatedAt": { "$date": "2026-03-20T10:00:00.000Z" }
+  },
+  {
+    "username": "milan_zap",
+    "password": "milan123",
+    "email": "milan@example.com",
+    "firstName": "Milan",
+    "lastName": "Popović",
+    "phone": "+381617890126",
+    "profileImage": "default-avatar.png",
+    "role": "zaposleni",
+    "favoriteSports": [],
+    "status": "active",
+    "employeeInfo": {
+      "facilityName": "Teniski centar Dorćol",
+      "facilityAddress": "Mike Alasa 12",
+      "registrationNumber": "11223344",
+      "pib": "111222333"
+    },
+    "resetToken": null,
+    "resetTokenExpires": null,
+    "facilityBlocks": [],
+    "createdAt": { "$date": "2026-02-20T10:00:00.000Z" },
+    "updatedAt": { "$date": "2026-02-20T10:00:00.000Z" }
+  },
+  {
+  "username": "Danilche",
+  "password": "123",
+  "email": "milovanovicdanilo03@gmail.com",
+  "firstName": "Danilo",
+  "lastName": "Milovanovic",
+  "phone": "0629630888",
+  "profileImage": "1781631397662-550778062.jpg",
+  "role": "sportista",
+  "favoriteSports": [
+    "Plivanje"
+  ],
+  "status": "rejected",
+  "resetToken": null,
+  "resetTokenExpires": null,
+  "facilityBlocks": [],
+  "createdAt": {
+    "$date": "2026-06-15T23:20:36.066Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T23:20:36.066Z"
+  }
+  }
+]

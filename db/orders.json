@@ -1,0 +1,28 @@
+[
+  {
+    "username": "marko123",
+    "items": [
+      { "equipmentName": "Fudbalska lopta Nike", "quantity": 2, "price": 4500 },
+      { "equipmentName": "Štucne Nike", "quantity": 1, "price": 1500 }
+    ],
+    "totalAmount": 10500,
+    "status": "ordered"
+  },
+  {
+    "username": "ana88",
+    "items": [
+      { "equipmentName": "Teniski reket Wilson", "quantity": 1, "price": 15000 },
+      { "equipmentName": "Teniske loptice (3 kom)", "quantity": 3, "price": 1200 }
+    ],
+    "totalAmount": 18600,
+    "status": "picked_up"
+  },
+  {
+    "username": "marko123",
+    "items": [
+      { "equipmentName": "Boca za vodu 750ml", "quantity": 2, "price": 800 }
+    ],
+    "totalAmount": 1600,
+    "status": "cancelled"
+  }
+]

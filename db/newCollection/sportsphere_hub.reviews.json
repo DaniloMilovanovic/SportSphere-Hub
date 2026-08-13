@@ -1,0 +1,117 @@
+[{
+  "_id": {
+    "$oid": "6a4bbb31dda681929ed7a2ef"
+  },
+  "username": "ana",
+  "facilityName": "Sportski centar Voždovac",
+  "type": "like",
+  "comment": "",
+  "createdAt": {
+    "$date": "2026-06-10T10:00:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a4bbb3fdda681929ed7a2fa"
+  },
+  "username": "ana",
+  "facilityName": "Sportski centar Voždovac",
+  "type": "",
+  "comment": "Lepi tereni, sve pohvale za upravu!",
+  "createdAt": {
+    "$date": "2026-06-10T10:05:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a4bbb9adda681929ed7a3e0"
+  },
+  "username": "Danilche",
+  "facilityName": "Sportski centar Voždovac",
+  "type": "like",
+  "comment": "",
+  "createdAt": {
+    "$date": "2026-06-15T12:00:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a4bbba9dda681929ed7a3eb"
+  },
+  "username": "Danilche",
+  "facilityName": "Sportski centar Voždovac",
+  "type": "",
+  "comment": "Mnogo mnogo lepa zgrada",
+  "createdAt": {
+    "$date": "2026-06-15T12:05:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a4bbbb2dda681929ed7a3f6"
+  },
+  "username": "Danilche",
+  "facilityName": "Sportski centar Voždovac",
+  "type": "",
+  "comment": "Uh što lepo!",
+  "createdAt": {
+    "$date": "2026-06-15T12:10:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a4bbbb3dda681929ed7a408"
+  },
+  "username": "Danilche",
+  "facilityName": "Sportski centar Voždovac",
+  "type": "dislike",
+  "comment": "",
+  "createdAt": {
+    "$date": "2026-06-20T14:00:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a4bbbb4dda681929ed7a41a"
+  },
+  "username": "Danilche",
+  "facilityName": "Sportski centar Voždovac",
+  "type": "like",
+  "comment": "",
+  "createdAt": {
+    "$date": "2026-06-20T14:05:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a4bbbc0dda681929ed7a46c"
+  },
+  "username": "Danilche",
+  "facilityName": "Sportski centar Voždovac",
+  "type": "like",
+  "comment": "",
+  "createdAt": {
+    "$date": "2026-06-25T16:00:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a4bbc2adda681929ed7a4e7"
+  },
+  "username": "Danilche",
+  "facilityName": "Sportski centar Voždovac",
+  "type": "like",
+  "comment": "",
+  "createdAt": {
+    "$date": "2026-06-30T18:00:00.000Z"
+  },
+  "__v": 0
+}]

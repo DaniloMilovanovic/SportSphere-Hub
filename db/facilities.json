@@ -1,0 +1,418 @@
+[
+  {
+    "name": "Sportski centar Voždovac",
+    "city": "Beograd",
+    "address": "Bulevar oslobođenja 215",
+    "description": "Najsavremeniji sportski centar na Voždovcu sa više terena za različite sportove. Otvoren 2020. godine, poseduje zatvorene hale i otvorene terene.",
+    "sports": ["Fudbal", "Košarka", "Tenis"],
+    "pricePerHour": 2000,
+    "images": [],
+    "likes": 245,
+    "dislikes": 12,
+    "likesUsers": [],
+    "dislikesUsers": [],
+    "status": "active",
+    "courts": [
+      {
+        "name": "Otvoreni teren 1",
+        "type": "otvoreni_teren",
+        "capacity": 22,
+        "sport": "Fudbal",
+        "equipmentDescription": "Veštačka trava, reflektori za noćne termine",
+        "status": "active"
+      },
+      {
+        "name": "Otvoreni teren 2",
+        "type": "otvoreni_teren",
+        "capacity": 22,
+        "sport": "Fudbal",
+        "equipmentDescription": "Prirodna trava, svlačionice u blizini",
+        "status": "active"
+      },
+      {
+        "name": "Teniski teren 1",
+        "type": "otvoreni_teren",
+        "capacity": 4,
+        "sport": "Tenis",
+        "equipmentDescription": "Šljaka, profesionalna rasveta",
+        "status": "active"
+      },
+      {
+        "name": "Teniski teren 2",
+        "type": "otvoreni_teren",
+        "capacity": 4,
+        "sport": "Tenis",
+        "equipmentDescription": "Tvrda podloga, idealna za trening",
+        "status": "active"
+      },
+      {
+        "name": "Hala Pionir",
+        "type": "zatvorena_hala",
+        "capacity": 30,
+        "sport": "Košarka",
+        "equipmentDescription": "Parket, elektronski semafor, tribine za 200 gledalaca",
+        "status": "active"
+      }
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [20.4751, 44.7758]
+    },
+    "maxNoShowsBeforeBlock": 3,
+    "workingHours": { "open": "08:00", "close": "23:00" },
+    "createdBy": null,
+    "employees": [],
+    "trainers": [],
+    "createdAt": { "$date": "2026-01-15T10:00:00.000Z" },
+    "updatedAt": { "$date": "2026-06-01T10:00:00.000Z" }
+  },
+  {
+    "name": "Arena Novi Beograd",
+    "city": "Beograd",
+    "address": "Jurija Gagarina 78",
+    "description": "Veliki sportski kompleks na Novom Beogradu sa bazenima, teretanom i višenamenskim halama. Pogodno za timske i individualne sportove.",
+    "sports": ["Košarka", "Odbojka", "Plivanje"],
+    "pricePerHour": 2500,
+    "images": [],
+    "likes": 189,
+    "dislikes": 8,
+    "likesUsers": [],
+    "dislikesUsers": [],
+    "status": "active",
+    "courts": [
+      {
+        "name": "Hala 1",
+        "type": "zatvorena_hala",
+        "capacity": 40,
+        "sport": "Košarka",
+        "equipmentDescription": "Parket, profesionalni koševi, svlačionice sa tuševima",
+        "status": "active"
+      },
+      {
+        "name": "Hala 2",
+        "type": "zatvorena_hala",
+        "capacity": 40,
+        "sport": "Odbojka",
+        "equipmentDescription": "Tarfleks podloga, mreža, stubovi profesionalni",
+        "status": "active"
+      },
+      {
+        "name": "Bazen olimpijski",
+        "type": "zatvorena_hala",
+        "capacity": 50,
+        "sport": "Plivanje",
+        "equipmentDescription": "Olimpijski bazen 50m, 8 staza, temperatura vode 27°C",
+        "status": "active"
+      }
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [20.4048, 44.8083]
+    },
+    "maxNoShowsBeforeBlock": 2,
+    "workingHours": { "open": "06:00", "close": "22:00" },
+    "createdBy": null,
+    "employees": [],
+    "trainers": [],
+    "createdAt": { "$date": "2026-02-10T10:00:00.000Z" },
+    "updatedAt": { "$date": "2026-06-01T10:00:00.000Z" }
+  },
+  {
+    "name": "Teniski centar Dorćol",
+    "city": "Beograd",
+    "address": "Mike Alasa 12",
+    "description": "Ekskluzivni teniski centar u srcu Dorćola sa 4 terena i klubom za članove. Nalazi se pored Dunava sa prelepim pogledom.",
+    "sports": ["Tenis", "Badminton"],
+    "pricePerHour": 1800,
+    "images": [],
+    "likes": 310,
+    "dislikes": 15,
+    "likesUsers": [],
+    "dislikesUsers": [],
+    "status": "active",
+    "courts": [
+      {
+        "name": "Terasa 1",
+        "type": "otvoreni_teren",
+        "capacity": 4,
+        "sport": "Tenis",
+        "equipmentDescription": "Šljaka, pogled na Dunav, osvetljenje",
+        "status": "active"
+      },
+      {
+        "name": "Terasa 2",
+        "type": "otvoreni_teren",
+        "capacity": 4,
+        "sport": "Tenis",
+        "equipmentDescription": "Šljaka, zaklonjena od vetra",
+        "status": "active"
+      },
+      {
+        "name": "Terasa 3",
+        "type": "otvoreni_teren",
+        "capacity": 4,
+        "sport": "Badminton",
+        "equipmentDescription": "Višenamenska podloga, mreža za badminton",
+        "status": "active"
+      }
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [20.4681, 44.8227]
+    },
+    "maxNoShowsBeforeBlock": 3,
+    "workingHours": { "open": "09:00", "close": "21:00" },
+    "createdBy": null,
+    "employees": [],
+    "trainers": [],
+    "createdAt": { "$date": "2026-03-05T10:00:00.000Z" },
+    "updatedAt": { "$date": "2026-06-01T10:00:00.000Z" }
+  },
+  {
+    "name": "Sportski centar Čair",
+    "city": "Niš",
+    "address": "Bulevar 9. brigade 10",
+    "description": "Najveći sportski centar u Nišu sa bazenima, sportskim halama i otvorenim terenima. Renoviran 2022. godine.",
+    "sports": ["Fudbal", "Košarka", "Plivanje", "Rukomet"],
+    "pricePerHour": 1500,
+    "images": [],
+    "likes": 178,
+    "dislikes": 22,
+    "likesUsers": [],
+    "dislikesUsers": [],
+    "status": "active",
+    "courts": [
+      {
+        "name": "Stadion Čair",
+        "type": "otvoreni_teren",
+        "capacity": 50,
+        "sport": "Fudbal",
+        "equipmentDescription": "Prirodna trava, atletska staza, tribine",
+        "status": "active"
+      },
+      {
+        "name": "Hala Čair",
+        "type": "zatvorena_hala",
+        "capacity": 45,
+        "sport": "Košarka",
+        "equipmentDescription": "Parket, tribine za 5000 gledalaca, VIP lože",
+        "status": "active"
+      },
+      {
+        "name": "Bazen Čair",
+        "type": "zatvorena_hala",
+        "capacity": 60,
+        "sport": "Plivanje",
+        "equipmentDescription": "Olimpijski bazen 50m, skakaonica, đakuzi",
+        "status": "active"
+      }
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [21.8958, 43.3211]
+    },
+    "maxNoShowsBeforeBlock": 2,
+    "workingHours": { "open": "06:00", "close": "23:00" },
+    "createdBy": null,
+    "employees": [],
+    "trainers": [],
+    "createdAt": { "$date": "2025-11-20T10:00:00.000Z" },
+    "updatedAt": { "$date": "2026-05-15T10:00:00.000Z" }
+  },
+  {
+    "name": "Teniski klub Novi Sad",
+    "city": "Novi Sad",
+    "address": "Fruškogorska 25",
+    "description": "Prestižni teniski klub sa 6 terena i profesionalnom teniskom školom. Nalazi se u podnožju Fruške gore.",
+    "sports": ["Tenis"],
+    "pricePerHour": 2200,
+    "images": [],
+    "likes": 156,
+    "dislikes": 5,
+    "likesUsers": [],
+    "dislikesUsers": [],
+    "status": "active",
+    "courts": [
+      {
+        "name": "Centralni teren",
+        "type": "otvoreni_teren",
+        "capacity": 4,
+        "sport": "Tenis",
+        "equipmentDescription": "Šljaka, tribine za 500 gledalaca, elektronski semafor",
+        "status": "active"
+      },
+      {
+        "name": "Teren 1",
+        "type": "otvoreni_teren",
+        "capacity": 4,
+        "sport": "Tenis",
+        "equipmentDescription": "Šljaka, reflektori",
+        "status": "active"
+      },
+      {
+        "name": "Teren 2",
+        "type": "otvoreni_teren",
+        "capacity": 4,
+        "sport": "Tenis",
+        "equipmentDescription": "Tvrda podloga, idealna za zimu",
+        "status": "active"
+      },
+      {
+        "name": "Zatvoreni teren",
+        "type": "zatvorena_hala",
+        "capacity": 4,
+        "sport": "Tenis",
+        "equipmentDescription": "Tvrda podloga, grejanje, ventilacija",
+        "status": "active"
+      }
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [19.8492, 45.2530]
+    },
+    "maxNoShowsBeforeBlock": 3,
+    "workingHours": { "open": "07:00", "close": "22:00" },
+    "createdBy": null,
+    "employees": [],
+    "trainers": [],
+    "createdAt": { "$date": "2026-01-10T10:00:00.000Z" },
+    "updatedAt": { "$date": "2026-05-20T10:00:00.000Z" }
+  },
+  {
+    "name": "Hala sportova Kragujevac",
+    "city": "Kragujevac",
+    "address": "Kralja Aleksandra I Karađorđevića 55",
+    "description": "Višenamenska sportska hala za timske sportove. Domaćin mnogih nacionalnih takmičenja.",
+    "sports": ["Košarka", "Odbojka", "Rukomet", "Stoni tenis"],
+    "pricePerHour": 1600,
+    "images": [],
+    "likes": 132,
+    "dislikes": 18,
+    "likesUsers": [],
+    "dislikesUsers": [],
+    "status": "active",
+    "courts": [
+      {
+        "name": "Dvorana A",
+        "type": "dvorana",
+        "capacity": 50,
+        "sport": "Košarka",
+        "equipmentDescription": "Parket, profesionalni koševi, tribine za 3000 mesta",
+        "status": "active"
+      },
+      {
+        "name": "Dvorana B",
+        "type": "dvorana",
+        "capacity": 50,
+        "sport": "Odbojka",
+        "equipmentDescription": "Tarfleks podloga, profesionalna mreža",
+        "status": "active"
+      },
+      {
+        "name": "Sala za stoni tenis",
+        "type": "zatvorena_hala",
+        "capacity": 20,
+        "sport": "Stoni tenis",
+        "equipmentDescription": "6 profesionalnih stolova, specijalna rasveta",
+        "status": "active"
+      }
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [20.9167, 44.0167]
+    },
+    "maxNoShowsBeforeBlock": 2,
+    "workingHours": { "open": "08:00", "close": "22:00" },
+    "createdBy": null,
+    "employees": [],
+    "trainers": [],
+    "createdAt": { "$date": "2025-12-05T10:00:00.000Z" },
+    "updatedAt": { "$date": "2026-04-10T10:00:00.000Z" }
+  },
+  {
+    "name": "Otvoreni tereni Ada Ciganlija",
+    "city": "Beograd",
+    "address": "Ada Ciganlija bb",
+    "description": "Sportski tereni na otvorenom u prirodnom okruženju AdevCiganlije. Idealno za rekreaciju tokom letnjih meseci.",
+    "sports": ["Fudbal", "Odbojka", "Tenis"],
+    "pricePerHour": 1200,
+    "images": [],
+    "likes": 98,
+    "dislikes": 30,
+    "likesUsers": [],
+    "dislikesUsers": [],
+    "status": "active",
+    "courts": [
+      {
+        "name": "Fudbalski teren Ada",
+        "type": "otvoreni_teren",
+        "capacity": 16,
+        "sport": "Fudbal",
+        "equipmentDescription": "Veštačka trava, pogled na jezero",
+        "status": "active"
+      },
+      {
+        "name": "Tenis Ada 1",
+        "type": "otvoreni_teren",
+        "capacity": 4,
+        "sport": "Tenis",
+        "equipmentDescription": "Šljaka, hladovina drveća",
+        "status": "active"
+      }
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [20.4167, 44.7917]
+    },
+    "maxNoShowsBeforeBlock": 3,
+    "workingHours": { "open": "08:00", "close": "20:00" },
+    "createdBy": null,
+    "employees": [],
+    "trainers": [],
+    "createdAt": { "$date": "2025-06-01T10:00:00.000Z" },
+    "updatedAt": { "$date": "2026-05-01T10:00:00.000Z" }
+  },
+  {
+    "name": "Sportski centar Subotica",
+    "city": "Subotica",
+    "address": "Trg slobode 1",
+    "description": "Moderni sportski centar na severu Srbije sa fokusom na borilačke veštine i atletiku.",
+    "sports": ["Borilačke veštine", "Atletika", "Košarka"],
+    "pricePerHour": 1400,
+    "images": [],
+    "likes": 87,
+    "dislikes": 3,
+    "likesUsers": [],
+    "dislikesUsers": [],
+    "status": "active",
+    "courts": [
+      {
+        "name": "Sala za borilačke veštine",
+        "type": "zatvorena_hala",
+        "capacity": 30,
+        "sport": "Borilačke veštine",
+        "equipmentDescription": "Strunjače, vreće za udaranje, ogledala",
+        "status": "active"
+      },
+      {
+        "name": "Atletska staza",
+        "type": "otvoreni_teren",
+        "capacity": 50,
+        "sport": "Atletika",
+        "equipmentDescription": "Tartan staza 400m, skakališta, bacački sektori",
+        "status": "active"
+      }
+    ],
+    "location": {
+      "type": "Point",
+      "coordinates": [19.6667, 46.1000]
+    },
+    "maxNoShowsBeforeBlock": 2,
+    "workingHours": { "open": "07:00", "close": "21:00" },
+    "createdBy": null,
+    "employees": [],
+    "trainers": [],
+    "createdAt": { "$date": "2026-02-20T10:00:00.000Z" },
+    "updatedAt": { "$date": "2026-04-15T10:00:00.000Z" }
+  }
+]

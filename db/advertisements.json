@@ -1,0 +1,111 @@
+[
+  {
+    "authorUsername": "Danilche",
+    "sport": "Fudbal",
+    "city": "Beograd",
+    "date": { "$date": "2026-06-20T00:00:00.000Z" },
+    "startTime": "14:00",
+    "endTime": "16:00",
+    "missingPlayers": 3,
+    "status": "active",
+    "requests": [
+      {
+        "username": "Marko23",
+        "status": "pending",
+        "requestDate": { "$date": "2026-06-18T10:00:00.000Z" }
+      },
+      {
+        "username": "NikolaFTW",
+        "status": "pending",
+        "requestDate": { "$date": "2026-06-18T11:00:00.000Z" }
+      },
+      {
+        "username": "Stefan99",
+        "status": "approved",
+        "requestDate": { "$date": "2026-06-17T15:00:00.000Z" }
+      }
+    ],
+    "createdAt": { "$date": "2026-06-17T09:00:00.000Z" }
+  },
+  {
+    "authorUsername": "AnaBasket",
+    "sport": "Košarka",
+    "city": "Novi Sad",
+    "date": { "$date": "2026-06-21T00:00:00.000Z" },
+    "startTime": "10:00",
+    "endTime": "12:00",
+    "missingPlayers": 4,
+    "status": "active",
+    "requests": [
+      {
+        "username": "JovanM",
+        "status": "pending",
+        "requestDate": { "$date": "2026-06-17T14:00:00.000Z" }
+      }
+    ],
+    "createdAt": { "$date": "2026-06-17T08:00:00.000Z" }
+  },
+  {
+    "authorUsername": "TenisMaster",
+    "sport": "Tenis",
+    "city": "Beograd",
+    "date": { "$date": "2026-06-22T00:00:00.000Z" },
+    "startTime": "17:00",
+    "endTime": "19:00",
+    "missingPlayers": 1,
+    "status": "active",
+    "requests": [],
+    "createdAt": { "$date": "2026-06-17T10:00:00.000Z" }
+  },
+  {
+    "authorUsername": "Petar92",
+    "sport": "Fudbal",
+    "city": "Niš",
+    "date": { "$date": "2026-06-23T00:00:00.000Z" },
+    "startTime": "16:00",
+    "endTime": "18:00",
+    "missingPlayers": 0,
+    "status": "closed",
+    "requests": [
+      {
+        "username": "Lazar7",
+        "status": "approved",
+        "requestDate": { "$date": "2026-06-16T12:00:00.000Z" }
+      },
+      {
+        "username": "MilosGoal",
+        "status": "approved",
+        "requestDate": { "$date": "2026-06-16T13:00:00.000Z" }
+      }
+    ],
+    "createdAt": { "$date": "2026-06-16T10:00:00.000Z" }
+  },
+  {
+    "authorUsername": "Danilche",
+    "sport": "Odbojka",
+    "city": "Beograd",
+    "date": { "$date": "2026-06-25T00:00:00.000Z" },
+    "startTime": "18:00",
+    "endTime": "20:00",
+    "missingPlayers": 5,
+    "status": "active",
+    "requests": [
+      {
+        "username": "JelenaV",
+        "status": "pending",
+        "requestDate": { "$date": "2026-06-17T16:00:00.000Z" }
+      },
+      {
+        "username": "IvanSpike",
+        "status": "pending",
+        "requestDate": { "$date": "2026-06-17T17:00:00.000Z" }
+      },
+      {
+        "username": "MarijaS",
+        "status": "rejected",
+        "requestDate": { "$date": "2026-06-17T12:00:00.000Z" }
+      }
+    ],
+    "createdAt": { "$date": "2026-06-17T11:00:00.000Z" }
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Fudbalska lopta Nike",
+    "category": "Fudbal",
+    "price": 4500,
+    "image": "lopta-nike.jpg",
+    "stock": 25
+  },
+  {
+    "name": "Kopačke Adidas Predator",
+    "category": "Fudbal",
+    "price": 12000,
+    "image": "kopacke-adidas.jpg",
+    "stock": 15
+  },
+  {
+    "name": "Štucne Nike",
+    "category": "Fudbal",
+    "price": 1500,
+    "image": "stucne-nike.jpg",
+    "stock": 40
+  },
+  {
+    "name": "Košarkaška lopta Spalding",
+    "category": "Košarka",
+    "price": 5500,
+    "image": "lopta-spalding.jpg",
+    "stock": 20
+  },
+  {
+    "name": "Košarkaški dres Lakers",
+    "category": "Košarka",
+    "price": 6500,
+    "image": "dres-lakers.jpg",
+    "stock": 10
+  },
+  {
+    "name": "Teniski reket Wilson",
+    "category": "Tenis",
+    "price": 15000,
+    "image": "reket-wilson.jpg",
+    "stock": 8
+  },
+  {
+    "name": "Teniske loptice (3 kom)",
+    "category": "Tenis",
+    "price": 1200,
+    "image": "loptice-tenis.jpg",
+    "stock": 50
+  },
+  {
+    "name": "Odbojkaška lopta Mikasa",
+    "category": "Odbojka",
+    "price": 5000,
+    "image": "lopta-mikasa.jpg",
+    "stock": 12
+  },
+  {
+    "name": "Šorc za plivanje Speedo",
+    "category": "Plivanje",
+    "price": 3500,
+    "image": "sorc-speedo.jpg",
+    "stock": 30
+  },
+  {
+    "name": "Rukometna lopta Select",
+    "category": "Rukomet",
+    "price": 4800,
+    "image": "lopta-select.jpg",
+    "stock": 10
+  },
+  {
+    "name": "Proteini Whey 1kg",
+    "category": "Dodaci ishrani",
+    "price": 4200,
+    "image": "whey-protein.jpg",
+    "stock": 35
+  },
+  {
+    "name": "Boca za vodu 750ml",
+    "category": "Dodaci",
+    "price": 800,
+    "image": "boca-voda.jpg",
+    "stock": 60
+  },
+  {
+    "name": "Peškir za teretanu",
+    "category": "Dodaci",
+    "price": 1100,
+    "image": "peskir.jpg",
+    "stock": 45
+  },
+  {
+    "name": "Rukavice za teretanu",
+    "category": "Dodaci",
+    "price": 1800,
+    "image": "rukavice.jpg",
+    "stock": 22
+  },
+  {
+    "name": "Sportske čarape Nike (3 para)",
+    "category": "Dodaci",
+    "price": 2000,
+    "image": "carape-nike.jpg",
+    "stock": 38
+  }
+]

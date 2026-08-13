@@ -1,0 +1,774 @@
+[{
+  "_id": {
+    "$oid": "6a4b9cfff19012c279b16412"
+  },
+  "name": "Sportski centar Voždovac",
+  "city": "Beograd",
+  "address": "Bulevar oslobođenja 215",
+  "description": "Najsavremeniji sportski centar na Voždovcu sa više terena za različite sportove. ",
+  "sports": [
+    "Fudbal",
+    "Košarka",
+    "Tenis"
+  ],
+  "pricePerHour": 2000,
+  "images": [
+    "bazeniVozdovac.jpg",
+    "terenVozdovac.jpg",
+    "vozdovacZatvoreniBazeni.jpg"
+  ],
+  "likes": 6,
+  "dislikes": 2,
+  "status": "active",
+  "courts": [
+    {
+      "name": "Otvoreni teren 1",
+      "type": "otvoreni_teren",
+      "capacity": 22,
+      "sport": "Fudbal",
+      "equipmentDescription": "Veštačka trava, reflektori za noćne termine",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4856ca78b29e440e4ca773"
+      }
+    },
+    {
+      "name": "Otvoreni teren 2",
+      "type": "otvoreni_teren",
+      "capacity": 22,
+      "sport": "Fudbal",
+      "equipmentDescription": "Prirodna trava, svlačionice u blizini",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4856ca78b29e440e4ca774"
+      }
+    },
+    {
+      "name": "Teniski teren 1",
+      "type": "otvoreni_teren",
+      "capacity": 4,
+      "sport": "Tenis",
+      "equipmentDescription": "Šljaka, profesionalna rasveta",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4856ca78b29e440e4ca775"
+      }
+    },
+    {
+      "name": "Teniski teren 2",
+      "type": "otvoreni_teren",
+      "capacity": 4,
+      "sport": "Tenis",
+      "equipmentDescription": "Tvrda podloga, idealna za trening",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4856ca78b29e440e4ca776"
+      }
+    },
+    {
+      "name": "Teren za košarku",
+      "type": "zatvorena_hala",
+      "capacity": 10,
+      "sport": "Košarka",
+      "equipmentDescription": "Koševi, teren.",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4856eb78b29e440e4ca783"
+      }
+    }
+  ],
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      20.473204890180792,
+      44.76344352527309
+    ]
+  },
+  "maxNoShowsBeforeBlock": 3,
+  "workingHours": {
+    "open": "08:00",
+    "close": "23:00"
+  },
+  "employees": [
+    "nikola"
+  ],
+  "trainers": []
+},
+{
+  "_id": {
+    "$oid": "6a4ba8ab03a515c537956a3a"
+  },
+  "name": "Arena Novi Beograd",
+  "city": "Beograd",
+  "address": "Bulevar Arsenija Čarnojevića 58",
+  "description": "Veliki sportski kompleks na Novom Beogradu sa bazenima, teretanom i višenamenskim halama. Pogodno za timske i individualne sportove.",
+  "sports": [
+    "Tenis",
+    "Odbojka",
+    "Rukomet",
+    "Košarka"
+  ],
+  "pricePerHour": 2500,
+  "images": [],
+  "likes": 0,
+  "dislikes": 0,
+  "status": "active",
+  "courts": [
+    {
+      "name": "Hala 1",
+      "type": "zatvorena_hala",
+      "capacity": 40,
+      "sport": "Košarka",
+      "equipmentDescription": "Parket, profesionalni koševi, svlačionice sa tuševima",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4ba8ab03a515c537956a3b"
+      }
+    },
+    {
+      "name": "Hala 2",
+      "type": "zatvorena_hala",
+      "capacity": 40,
+      "sport": "Odbojka",
+      "equipmentDescription": "Mekana podloga, mreža, stubovi profesionalni",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4ba8ab03a515c537956a3c"
+      }
+    },
+    {
+      "name": "Teren 1",
+      "type": "otvoreni_teren",
+      "capacity": 10,
+      "sport": "Tenis",
+      "equipmentDescription": "Mreža, tvrda podloga, tribine, stolica.",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4ba8ab03a515c537956a3d"
+      }
+    }
+  ],
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      0,
+      0
+    ]
+  },
+  "maxNoShowsBeforeBlock": 5,
+  "workingHours": {
+    "open": "09:00",
+    "close": "22:00"
+  },
+  "employees": [
+    "nikola",
+    "Dushan"
+  ],
+  "trainers": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a4ba9e103a515c537956a40"
+  },
+  "name": "Teniski centar Ada",
+  "city": "Beograd",
+  "address": "Ada Ciganlija bb, 11000",
+  "description": "Teniski kompleks se nalazi iza fudbalskog kompleksa, okružen piknik prostorom, otvorenim sportskim igralištima i biciklističkom stazom. Čine ga teniska hala i pet otvorenih teniskih igrališta. Korišćenje kompleksa je komercijalnog tipa.",
+  "sports": [
+    "Tenis"
+  ],
+  "pricePerHour": 1500,
+  "images": [],
+  "likes": 0,
+  "dislikes": 0,
+  "status": "active",
+  "courts": [
+    {
+      "name": "Teren 1",
+      "type": "otvoreni_teren",
+      "capacity": 4,
+      "sport": "Tenis",
+      "equipmentDescription": "Zemljana podloga - šljaka, mreža.",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4ba9e103a515c537956a41"
+      }
+    },
+    {
+      "name": "Teren 2",
+      "type": "otvoreni_teren",
+      "capacity": 4,
+      "sport": "Tenis",
+      "equipmentDescription": "Zemljana podloga - šljaka, mreža.",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4ba9e103a515c537956a42"
+      }
+    },
+    {
+      "name": "Teren 3",
+      "type": "otvoreni_teren",
+      "capacity": 4,
+      "sport": "Tenis",
+      "equipmentDescription": "Zemljana podloga - šljaka, mreža.",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4ba9e103a515c537956a43"
+      }
+    },
+    {
+      "name": "Hala 1",
+      "type": "zatvorena_hala",
+      "capacity": 30,
+      "sport": "Tenis",
+      "equipmentDescription": "Hala poseduje dva igrališta sa tvrdom podlogom, rađena po uzoru na podlogu koja se koristi na US open-u. Pored igrališta hala poseduje prostor za kondicioniranje, svlačionice sa mokrim čvorom, tuš kabine, kafe bar, balkon ložu i kancelariju. Teniska hala ima obezbeđeno grejanje.",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4ba9e103a515c537956a44"
+      }
+    }
+  ],
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      0,
+      0
+    ]
+  },
+  "maxNoShowsBeforeBlock": 6,
+  "workingHours": {
+    "open": "06:00",
+    "close": "20:00"
+  },
+  "employees": [
+    "nikola",
+    "Draganche"
+  ],
+  "trainers": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a4bada403a515c537956b94"
+  },
+  "name": "Sportski centar Požarevac",
+  "city": "Požarevac",
+  "address": "Partizanska 1",
+  "description": "Sportski centar Požarevac (SC Požarevac) je multi sportski kompleks gde se organizuju brojni sportski, zabavni, estradni i humanitarni programi gostima iz gotovo cele Evrope kao i Nemačke, Rusije, Grčke, Kine, SAD, Kube, Turske, Austrije, Italije, Mađarske, Poljske, Bugarske, Rumunije.[1] Nalazi se u ulici Partizanska 1.",
+  "sports": [
+    "Tenis",
+    "Odbojka",
+    "Plivanje",
+    "Stoni tenis",
+    "Rukomet",
+    "Fudbal",
+    "Košarka"
+  ],
+  "pricePerHour": 3000,
+  "images": [],
+  "likes": 0,
+  "dislikes": 0,
+  "status": "active",
+  "courts": [
+    {
+      "name": "Otvoreni bazen",
+      "type": "otvoreni_teren",
+      "capacity": 50,
+      "sport": "Plivanje",
+      "equipmentDescription": "Tri bazena, beach bar, ležaljke, kabine za presvlačenje i tuševi",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4bada403a515c537956b95"
+      }
+    },
+    {
+      "name": "Velika hala",
+      "type": "zatvorena_hala",
+      "capacity": 3000,
+      "sport": "Košarka",
+      "equipmentDescription": "Parket, tribine za 2000 gledalaca, elektronski semafor, svlačionice",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4bada403a515c537956b96"
+      }
+    },
+    {
+      "name": "Mala hala",
+      "type": "zatvorena_hala",
+      "capacity": 500,
+      "sport": "Odbojka",
+      "equipmentDescription": "Tarfleks podloga, tribine za 500 gledalaca",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4bada403a515c537956b97"
+      }
+    },
+    {
+      "name": "Fudbalski teren",
+      "type": "otvoreni_teren",
+      "capacity": 1000,
+      "sport": "Fudbal",
+      "equipmentDescription": "Prirodna trava, reflektori, tribine za 1000 gledalaca",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4bada403a515c537956b98"
+      }
+    },
+    {
+      "name": "Teniski teren 1",
+      "type": "otvoreni_teren",
+      "capacity": 4,
+      "sport": "Tenis",
+      "equipmentDescription": "Tvrda podloga, reflektori",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4bada403a515c537956b99"
+      }
+    },
+    {
+      "name": "Teniski teren 2",
+      "type": "otvoreni_teren",
+      "capacity": 4,
+      "sport": "Tenis",
+      "equipmentDescription": "Tvrda podloga, reflektori",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4bada403a515c537956b9a"
+      }
+    }
+  ],
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      0,
+      0
+    ]
+  },
+  "maxNoShowsBeforeBlock": 2,
+  "workingHours": {
+    "open": "07:00",
+    "close": "22:00"
+  },
+  "employees": [
+    "Draganche"
+  ],
+  "trainers": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a4bae7f03a515c537956b9d"
+  },
+  "name": "Sportska hala Smederevo",
+  "city": "Smederevo",
+  "address": "Đure Daničića 6",
+  "description": "Sportski centar Smederevo je moderan sportski kompleks koji se nalazi u blizini Dunava. Poseduje zatvorene hale, otvorene terene i bazen. Organizuju se brojne sportske manifestacije i takmičenja.",
+  "sports": [
+    "Odbojka",
+    "Plivanje",
+    "Rukomet",
+    "Fudbal",
+    "Košarka"
+  ],
+  "pricePerHour": 4000,
+  "images": [],
+  "likes": 0,
+  "dislikes": 0,
+  "status": "active",
+  "courts": [
+    {
+      "name": "Sportska hala",
+      "type": "zatvorena_hala",
+      "capacity": 1500,
+      "sport": "Košarka",
+      "equipmentDescription": "Parket, elektronski semafor, tribine za 1500 mesta, svlačionice sa tuševima",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4bae7f03a515c537956b9e"
+      }
+    },
+    {
+      "name": "Gradski stadion",
+      "type": "otvoreni_teren",
+      "capacity": 3000,
+      "sport": "Fudbal",
+      "equipmentDescription": "Prirodna trava, reflektori, atletska staza, tribine za 3000 gledalaca\"",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4bae7f03a515c537956b9f"
+      }
+    },
+    {
+      "name": "Bazen",
+      "type": "zatvorena_hala",
+      "capacity": 40,
+      "sport": "Plivanje",
+      "equipmentDescription": "Olimpijski bazen 50m, 8 staza, temperatura vode 27°C",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4bae7f03a515c537956ba0"
+      }
+    },
+    {
+      "name": "Otvoren teren",
+      "type": "otvoreni_teren",
+      "capacity": 12,
+      "sport": "Odbojka",
+      "equipmentDescription": "Pesak, mreža, reflektori",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4bae7f03a515c537956ba1"
+      }
+    }
+  ],
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      0,
+      0
+    ]
+  },
+  "maxNoShowsBeforeBlock": 5,
+  "workingHours": {
+    "open": "07:00",
+    "close": "22:00"
+  },
+  "employees": [
+    "Draganche"
+  ],
+  "trainers": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a4baf9b03a515c537956bc8"
+  },
+  "name": "Sportski centar Veliko Gradište",
+  "city": "Veliko Gradište",
+  "address": "Boška Vrebalova 3",
+  "description": "Sportski centar Veliko Gradište nalazi se u blizini Srebrnog jezera. Kompleks poseduje otvorene terene za različite sportove i idealan je za sportske pripreme i rekreaciju tokom letnje sezone.",
+  "sports": [
+    "Odbojka",
+    "Fudbal",
+    "Košarka"
+  ],
+  "pricePerHour": 4500,
+  "images": [],
+  "likes": 0,
+  "dislikes": 0,
+  "status": "active",
+  "courts": [
+    {
+      "name": "Fudbalski teren",
+      "type": "otvoreni_teren",
+      "capacity": 22,
+      "sport": "Fudbal",
+      "equipmentDescription": "Prirodna trava, svlačionice, reflektori",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4baf9b03a515c537956bc9"
+      }
+    },
+    {
+      "name": "Košarkaški teren",
+      "type": "otvoreni_teren",
+      "capacity": 10,
+      "sport": "Košarka",
+      "equipmentDescription": "Betonska podloga, koševi, reflektori",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4baf9b03a515c537956bca"
+      }
+    },
+    {
+      "name": "Zatvorena Hala",
+      "type": "zatvorena_hala",
+      "capacity": 500,
+      "sport": "Košarka",
+      "equipmentDescription": "Prostor za 500 gledalaca, tvrda podloga, svlačionice, tuševi.",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4baf9b03a515c537956bcb"
+      }
+    },
+    {
+      "name": "Teren za odbojku",
+      "type": "otvoreni_teren",
+      "capacity": 20,
+      "sport": "Odbojka",
+      "equipmentDescription": "Pesak, mreža, tribine, reflektori.",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4baf9b03a515c537956bcc"
+      }
+    }
+  ],
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      0,
+      0
+    ]
+  },
+  "maxNoShowsBeforeBlock": 3,
+  "workingHours": {
+    "open": "10:00",
+    "close": "22:00"
+  },
+  "employees": [
+    "Dushan"
+  ],
+  "trainers": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a4bb07803a515c537956bcf"
+  },
+  "name": "Sportski centar Srebrno jezero",
+  "city": "Veliko Gradište",
+  "address": "Srebrno jezero bb",
+  "description": "Sportsko-rekreativni kompleks na obali Srebrnog jezera. Idealno mesto za sportske pripreme, letnje kampove i rekreativni turizam. Kompleks poseduje terene za različite sportove sa pogledom na jezero.",
+  "sports": [
+    "Odbojka",
+    "Fudbal",
+    "Košarka"
+  ],
+  "pricePerHour": 4000,
+  "images": [],
+  "likes": 0,
+  "dislikes": 0,
+  "status": "active",
+  "courts": [
+    {
+      "name": "Fudbalski teren",
+      "type": "otvoreni_teren",
+      "capacity": 22,
+      "sport": "Fudbal",
+      "equipmentDescription": "Veštačka trava, reflektori, svlačionice, pogled na jezero",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4bb07803a515c537956bd0"
+      }
+    },
+    {
+      "name": "Košarkaški teren",
+      "type": "zatvorena_hala",
+      "capacity": 10,
+      "sport": "Košarka",
+      "equipmentDescription": "Betonska podloga, profesionalni koševi, reflektori",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4bb07803a515c537956bd1"
+      }
+    },
+    {
+      "name": "Teren za odbojku na pesku",
+      "type": "otvoreni_teren",
+      "capacity": 10,
+      "sport": "Odbojka",
+      "equipmentDescription": "Pesak, profesionalna mreža, reflektori, neposredna blizina plaže",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4bb07803a515c537956bd2"
+      }
+    }
+  ],
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      0,
+      0
+    ]
+  },
+  "maxNoShowsBeforeBlock": 3,
+  "workingHours": {
+    "open": "08:00",
+    "close": "22:00"
+  },
+  "employees": [
+    "Dushan"
+  ],
+  "trainers": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a4bb3c903a515c537956edb"
+  },
+  "name": "Rekreativni centar Liman",
+  "city": "Novi Sad",
+  "address": "Narodnog fronta 55",
+  "description": "Rekreativni centar Liman se nalazi u naselju Liman u Novom Sadu. Okružen parkom i blizina Dunava čine ga idealnim mestom za sport i rekreaciju. Poseduje otvorene terene, bazen i teretanu.",
+  "sports": [
+    "Odbojka",
+    "Plivanje",
+    "Stoni tenis",
+    "Badminton",
+    "Košarka"
+  ],
+  "pricePerHour": 2500,
+  "images": [],
+  "likes": 0,
+  "dislikes": 0,
+  "status": "active",
+  "courts": [
+    {
+      "name": "Košarkaški teren",
+      "type": "otvoreni_teren",
+      "capacity": 10,
+      "sport": "Košarka",
+      "equipmentDescription": "Betonska podloga, profesionalni koševi, reflektori",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4bb3c903a515c537956edc"
+      }
+    },
+    {
+      "name": "Bazen Liman",
+      "type": "zatvorena_hala",
+      "capacity": 40,
+      "sport": "Plivanje",
+      "equipmentDescription": "Bazen 25m, 6 staza, temperatura vode 26°C, svlačionice",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4bb3c903a515c537956edd"
+      }
+    },
+    {
+      "name": "Sala za badminton",
+      "type": "zatvorena_hala",
+      "capacity": 16,
+      "sport": "Badminton",
+      "equipmentDescription": "Parket, profesionalne mreže, reflektori",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4bb3c903a515c537956ede"
+      }
+    },
+    {
+      "name": "Sala za stoni tenis",
+      "type": "zatvorena_hala",
+      "capacity": 10,
+      "sport": "Stoni tenis",
+      "equipmentDescription": "4 profesionalna stola, specijalna rasveta",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4bb3c903a515c537956edf"
+      }
+    }
+  ],
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      0,
+      0
+    ]
+  },
+  "maxNoShowsBeforeBlock": 3,
+  "workingHours": {
+    "open": "08:00",
+    "close": "22:00"
+  },
+  "employees": [
+    "Draganche"
+  ],
+  "trainers": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a4bb48603a515c537956ee2"
+  },
+  "name": "Sportski centar Novi Sad",
+  "city": "Novi Sad",
+  "address": "Sutjeska 2",
+  "description": "Sportski centar Novi Sad je jedan od najvećih sportskih kompleksa u Vojvodini. Poseduje zatvorene hale, otvorene terene, atletsku stazu i sale za borilačke veštine. Organizuju se brojna nacionalna i međunarodna takmičenja.",
+  "sports": [
+    "Rukomet",
+    "Borilačke veštine",
+    "Atletika",
+    "Fudbal",
+    "Košarka"
+  ],
+  "pricePerHour": 3500,
+  "images": [],
+  "likes": 0,
+  "dislikes": 0,
+  "status": "active",
+  "courts": [
+    {
+      "name": "Velika hala",
+      "type": "zatvorena_hala",
+      "capacity": 3000,
+      "sport": "Košarka",
+      "equipmentDescription": "Parket, elektronski semafor, tribine za 3000 mesta, VIP lože, svlačionice",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4bb48603a515c537956ee3"
+      }
+    },
+    {
+      "name": "Mala hala",
+      "type": "zatvorena_hala",
+      "capacity": 800,
+      "sport": "Rukomet",
+      "equipmentDescription": "Tarfleks podloga, profesionalna mreža, tribine za 800 mesta",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4bb48603a515c537956ee4"
+      }
+    },
+    {
+      "name": "Fudbalski teren",
+      "type": "otvoreni_teren",
+      "capacity": 1000,
+      "sport": "Fudbal",
+      "equipmentDescription": "Prirodna trava, reflektori, svlačionice, tribine za 1000 gledalaca",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4bb48603a515c537956ee5"
+      }
+    },
+    {
+      "name": "Atletska staza",
+      "type": "otvoreni_teren",
+      "capacity": 50,
+      "sport": "Atletika",
+      "equipmentDescription": "Atletska staza 400m, skakališta, bacački sektori, tribine",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4bb48603a515c537956ee6"
+      }
+    },
+    {
+      "name": "Sala za borilačke veštine",
+      "type": "zatvorena_hala",
+      "capacity": 30,
+      "sport": "Borilačke veštine",
+      "equipmentDescription": "Strunjače, vreće za udaranje, ogledala, ring za boks",
+      "status": "active",
+      "_id": {
+        "$oid": "6a4bb48603a515c537956ee7"
+      }
+    }
+  ],
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      0,
+      0
+    ]
+  },
+  "maxNoShowsBeforeBlock": 3,
+  "workingHours": {
+    "open": "08:00",
+    "close": "22:00"
+  },
+  "employees": [
+    "Draganche"
+  ],
+  "trainers": [],
+  "__v": 0
+}]

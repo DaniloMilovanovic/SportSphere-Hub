@@ -40,3 +40,7 @@ backend_Node/dist/
 # Project specific
 predaja/
 2025_2026_IR3PIA_Projekat_za_junjul.pdf
+
+db/newCollection/
+db/shop/
+db/objekatZaDodavanje.json

@@ -1,0 +1,132 @@
+[{
+  "_id": {
+    "$oid": "6a4bb64d03a515c537957310"
+  },
+  "athleteUsername": "Danilche",
+  "trainerId": "6a330aa5a9bf5eacf8693877",
+  "trainerFirstName": "Jelena",
+  "trainerLastName": "Marković",
+  "sport": "Odbojka",
+  "facilityName": "Arena Novi Beograd",
+  "city": "Beograd",
+  "courtName": "Hala 2",
+  "date": {
+    "$date": "2026-07-07T00:00:00.000Z"
+  },
+  "startTime": "09:00",
+  "endTime": "11:00",
+  "pricePerHour": 1600,
+  "totalPrice": 3200,
+  "status": "scheduled",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a4bb66603a515c537957319"
+  },
+  "athleteUsername": "Danilche",
+  "trainerId": "6a330aa5a9bf5eacf8693877",
+  "trainerFirstName": "Jelena",
+  "trainerLastName": "Marković",
+  "sport": "Odbojka",
+  "facilityName": "Arena Novi Beograd",
+  "city": "Beograd",
+  "courtName": "Hala 2",
+  "date": {
+    "$date": "2026-07-08T00:00:00.000Z"
+  },
+  "startTime": "10:00",
+  "endTime": "13:00",
+  "pricePerHour": 1600,
+  "totalPrice": 4800,
+  "status": "scheduled",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a4bb67903a515c537957325"
+  },
+  "athleteUsername": "Danilche",
+  "trainerId": "6a330aa5a9bf5eacf8693874",
+  "trainerFirstName": "Dejan",
+  "trainerLastName": "Stanković",
+  "sport": "Fudbal",
+  "facilityName": "Sportski centar Voždovac",
+  "city": "Beograd",
+  "courtName": "Otvoreni teren 1",
+  "date": {
+    "$date": "2026-07-09T00:00:00.000Z"
+  },
+  "startTime": "10:00",
+  "endTime": "13:00",
+  "pricePerHour": 1500,
+  "totalPrice": 4500,
+  "status": "scheduled",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a4bb68603a515c537957330"
+  },
+  "athleteUsername": "Danilche",
+  "trainerId": "6a330aa5a9bf5eacf8693874",
+  "trainerFirstName": "Dejan",
+  "trainerLastName": "Stanković",
+  "sport": "Fudbal",
+  "facilityName": "Sportski centar Voždovac",
+  "city": "Beograd",
+  "courtName": "Otvoreni teren 2",
+  "date": {
+    "$date": "2026-07-10T00:00:00.000Z"
+  },
+  "startTime": "14:00",
+  "endTime": "15:00",
+  "pricePerHour": 1500,
+  "totalPrice": 1500,
+  "status": "scheduled",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a4bb69103a515c53795733b"
+  },
+  "athleteUsername": "Danilche",
+  "trainerId": "6a330aa5a9bf5eacf8693874",
+  "trainerFirstName": "Dejan",
+  "trainerLastName": "Stanković",
+  "sport": "Fudbal",
+  "facilityName": "Sportski centar Voždovac",
+  "city": "Beograd",
+  "courtName": "Otvoreni teren 2",
+  "date": {
+    "$date": "2026-07-13T00:00:00.000Z"
+  },
+  "startTime": "19:00",
+  "endTime": "21:00",
+  "pricePerHour": 1500,
+  "totalPrice": 3000,
+  "status": "scheduled",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a4bbb2bdda681929ed7a2dd"
+  },
+  "athleteUsername": "ana",
+  "trainerId": "6a330aa5a9bf5eacf8693877",
+  "trainerFirstName": "Jelena",
+  "trainerLastName": "Marković",
+  "sport": "Odbojka",
+  "facilityName": "Arena Novi Beograd",
+  "city": "Beograd",
+  "courtName": "Hala 2",
+  "date": {
+    "$date": "2026-07-23T00:00:00.000Z"
+  },
+  "startTime": "10:00",
+  "endTime": "18:00",
+  "pricePerHour": 1600,
+  "totalPrice": 12800,
+  "status": "scheduled",
+  "__v": 0
+}]

@@ -1,0 +1,68 @@
+[
+  {
+    "facilityName": "Sportski centar Voždovac",
+    "name": "Jutarnji trening - 30% popusta",
+    "description": "Svi termini pre 10:00 časova na fudbalskim terenima uz 30% popusta.",
+    "discountType": "percentage",
+    "discountValue": 30,
+    "sports": ["Fudbal"],
+    "validFrom": { "$date": "2026-06-01T00:00:00.000Z" },
+    "validTo": { "$date": "2026-07-31T23:59:59.000Z" },
+    "status": "active"
+  },
+  {
+    "facilityName": "Arena Novi Beograd",
+    "name": "Letnji paket - 500 RSD popusta",
+    "description": "Popust od 500 RSD na sve termine u Areni Novi Beograd za košarku i odbojku.",
+    "discountType": "fixed",
+    "discountValue": 500,
+    "sports": ["Košarka", "Odbojka"],
+    "validFrom": { "$date": "2026-06-01T00:00:00.000Z" },
+    "validTo": { "$date": "2026-08-31T23:59:59.000Z" },
+    "status": "active"
+  },
+  {
+    "facilityName": "Teniski centar Dorćol",
+    "name": "Letnji popust 20% na tenis",
+    "description": "Uživajte u tenisu na Dorćolu uz 20% popusta na sve termine u junu i julu!",
+    "discountType": "percentage",
+    "discountValue": 20,
+    "sports": ["Tenis"],
+    "validFrom": { "$date": "2026-06-01T00:00:00.000Z" },
+    "validTo": { "$date": "2026-07-31T23:59:59.000Z" },
+    "status": "active"
+  },
+  {
+    "facilityName": "Teniski klub Novi Sad",
+    "name": "Zimski paket - zatvoreni teren",
+    "description": "Zatvoreni teniski teren u Novom Sadu po ceni otvorenog tokom zimskih meseci!",
+    "discountType": "fixed",
+    "discountValue": 800,
+    "sports": ["Tenis"],
+    "validFrom": { "$date": "2026-12-01T00:00:00.000Z" },
+    "validTo": { "$date": "2027-01-31T23:59:59.000Z" },
+    "status": "active"
+  },
+  {
+    "facilityName": "Hala sportova Kragujevac",
+    "name": "Grupni treninzi - 25% popusta",
+    "description": "Popust od 25% na grupne termine u Dvorani A za košarku.",
+    "discountType": "percentage",
+    "discountValue": 25,
+    "sports": ["Košarka"],
+    "validFrom": { "$date": "2026-06-01T00:00:00.000Z" },
+    "validTo": { "$date": "2026-09-30T23:59:59.000Z" },
+    "status": "active"
+  },
+  {
+    "facilityName": "Sportski centar Subotica",
+    "name": "Atletika - besplatan prvi termin",
+    "description": "Prvi termin na atletskoj stazi potpuno besplatan za nove korisnike.",
+    "discountType": "percentage",
+    "discountValue": 100,
+    "sports": ["Atletika"],
+    "validFrom": { "$date": "2026-06-01T00:00:00.000Z" },
+    "validTo": { "$date": "2026-07-15T23:59:59.000Z" },
+    "status": "active"
+  }
+]

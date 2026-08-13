@@ -1,0 +1,62 @@
+[{
+  "_id": {
+    "$oid": "6a30675b8e5f7ed366c51386"
+  },
+  "name": "Tenis"
+},
+{
+  "_id": {
+    "$oid": "6a30675b8e5f7ed366c51387"
+  },
+  "name": "Odbojka"
+},
+{
+  "_id": {
+    "$oid": "6a30675b8e5f7ed366c51388"
+  },
+  "name": "Plivanje"
+},
+{
+  "_id": {
+    "$oid": "6a30675b8e5f7ed366c51389"
+  },
+  "name": "Stoni tenis"
+},
+{
+  "_id": {
+    "$oid": "6a30675b8e5f7ed366c5138a"
+  },
+  "name": "Rukomet"
+},
+{
+  "_id": {
+    "$oid": "6a30675b8e5f7ed366c5138b"
+  },
+  "name": "Badminton"
+},
+{
+  "_id": {
+    "$oid": "6a30675b8e5f7ed366c5138c"
+  },
+  "name": "Borilačke veštine"
+},
+{
+  "_id": {
+    "$oid": "6a30675b8e5f7ed366c5138d"
+  },
+  "name": "Atletika"
+},
+{
+  "_id": {
+    "$oid": "6a3168922effa717a4595c5c"
+  },
+  "name": "Fudbal",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a31689b2effa717a4595c6d"
+  },
+  "name": "Košarka",
+  "__v": 0
+}]

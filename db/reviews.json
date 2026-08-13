@@ -1,0 +1,51 @@
+[
+  {
+    "username": "Danilche",
+    "facilityName": "Sportski centar Voždovac",
+    "type": "like",
+    "comment": "Odličan objekat, tereni su uvek dobro održavani. Osoblje je ljubazno i profesionalno.",
+    "createdAt": { "$date": "2026-06-15T10:30:00.000Z" }
+  },
+  {
+    "username": "Marko23",
+    "facilityName": "Sportski centar Voždovac",
+    "type": "like",
+    "comment": "Najbolji fudbalski tereni u Beogradu! Redovno dolazim sa ekipom.",
+    "createdAt": { "$date": "2026-06-14T14:00:00.000Z" }
+  },
+  {
+    "username": "NikolaFTW",
+    "facilityName": "Sportski centar Voždovac",
+    "type": "dislike",
+    "comment": "Cena je malo previsoka za kvalitet koji se nudi. Svlačionice bi mogle biti čistije.",
+    "createdAt": { "$date": "2026-06-13T09:15:00.000Z" }
+  },
+  {
+    "username": "Stefan99",
+    "facilityName": "Sportski centar Voždovac",
+    "type": "like",
+    "comment": "Odlična lokacija i lako se nalazi parking. Tereni su prostrani i dobro osvetljeni.",
+    "createdAt": { "$date": "2026-06-12T16:45:00.000Z" }
+  },
+  {
+    "username": "JelenaV",
+    "facilityName": "Sportski centar Voždovac",
+    "type": "like",
+    "comment": "Konačno objekat koji ima sve što je potrebno za trening. Preporuka za sve sportiste!",
+    "createdAt": { "$date": "2026-06-11T11:20:00.000Z" }
+  },
+  {
+    "username": "Lazar7",
+    "facilityName": "Sportski centar Voždovac",
+    "type": "dislike",
+    "comment": "Ponekad je previše gužve na terenima, trebalo bi ograničiti broj termina u špicu.",
+    "createdAt": { "$date": "2026-06-10T08:00:00.000Z" }
+  },
+  {
+    "username": "MilosGoal",
+    "facilityName": "Sportski centar Voždovac",
+    "type": "like",
+    "comment": "Super mesto za rekreaciju i druženje. Kafić u sklopu objekta je veliki plus!",
+    "createdAt": { "$date": "2026-06-09T13:30:00.000Z" }
+  }
+]
