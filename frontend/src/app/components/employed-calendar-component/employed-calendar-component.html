@@ -1,0 +1,62 @@
+<div class="calendar-page">
+    <div class="card">
+        <h3>Kalendar rezervacija</h3>
+        <div class="calendar-filters">
+            <div class="filter-group">
+                <label>Sportski objekat:</label>
+                <select [(ngModel)]="selectedFacility" (change)="onFacilityChange()">
+                    @for(f of myFacilities; track f._id) {
+                        <option [ngValue]="f">{{f.name}}</option>
+                    }
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Teren/Hala:</label>
+                <select [(ngModel)]="selectedCourt" (change)="onCourtChange()">
+                    @for(c of filteredCourts; track c.name) {
+                        <option [ngValue]="c">{{c.name}} ({{c.type}})</option>
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="calendar-container">
+            <div class="calendar-header">
+                <button (click)="previousWeek()">Prethodna nedelja</button>
+                <h3 class = "dates">{{weekRange}}</h3>
+                <button (click)="nextWeek()">Sledeća nedelja</button>
+            </div>
+
+            <div class="calendar-table-wrapper">
+                <table class="calendar-table">
+                    <thead>
+                        <tr>
+                            <th class="time-header">Vreme</th>
+                            @for(day of weekDays; track day.date) {
+                                <th>{{day.name}}<br>{{day.date.getUTCDate()}}.{{day.date.getUTCMonth() + 1}}</th>
+                            }
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for(hour of hours; track hour) {
+                            <tr>
+                                <td class="time-cell">{{hour}}:00</td>
+                                @for(day of weekDays; track day.date) {
+                                    <td class="slot-cell"
+                                        [class.booked]="isSlotBooked(day.date, hour)"
+                                        [class.training]="isTrainingSlot(day.date, hour)"
+                                        [class.outside-hours]="!isWithinWorkingHours(hour)">
+                                    </td>
+                                }
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        @if(message) {
+            <p class="message">{{message}}</p>
+        }
+    </div>
+</div>

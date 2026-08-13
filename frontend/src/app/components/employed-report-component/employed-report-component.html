@@ -1,0 +1,73 @@
+<div class="reports-container">
+    <div class="card">
+        <h3>Moji objekti</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Naziv</th>
+                        <th>Grad</th>
+                        <th>Sportovi</th>
+                        <th>Cena/sat</th>
+                        <th>Status</th>
+                        <th>Tereni/Hale</th>
+                        <th>Akcija</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(facility of myFacilities; track facility.name) {
+                        <tr [class.selected-row]="selectedFacility.name === facility.name">
+                            <td>{{facility.name}}</td>
+                            <td>{{facility.city}}</td>
+                            <td>{{facility.sports.join(', ')}}</td>
+                            <td>{{facility.pricePerHour}} RSD</td>
+                            <td>{{getFacilityStatusText(facility.status)}}</td>
+                            <td>
+                                @for(court of facility.courts; track court.name) {
+                                    {{court.name}} ({{court.type}}) - Kap: {{court.capacity}}<br>
+                                }
+                            </td>
+                            <td>
+                                <button (click)="selectFacility(facility)">Izaberi</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Generiši izvestaje</h3>
+        <form>
+            <div class="form-row">
+                <label>Mesec u godini:</label>
+                <input type="month" [(ngModel)]="selectedMonth" name="selectedMonth">
+            </div>
+
+            
+
+            <div class="report-buttons">
+                <button type="button" (click)="generateFieldReport()">Izveštaj o popunjenosti terena</button>
+                <button type="button" (click)="generateEquipmentSalesReport()">Izveštaj o prometu opreme</button>
+            </div>
+        </form>
+    </div>
+
+    @if(selectedFacility.name) {
+        <div class="card selected-info">
+            <p><strong>Izabrani objekat:</strong> {{selectedFacility.name}} - {{selectedFacility.city}}</p>
+        </div>
+    }
+
+    @if(selectedMonth) {
+        <p class="selected-info">Izabrani period: <strong>{{selectedMonth}}</strong></p>
+    }
+
+    @if(message) {
+        <p class="message">{{message}}</p>
+    }
+    @if(errorMessage) {
+        <p class = "error-message"> {{errorMessage}}</p>
+    }
+</div>

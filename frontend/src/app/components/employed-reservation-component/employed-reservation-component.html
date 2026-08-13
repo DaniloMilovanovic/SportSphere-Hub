@@ -1,0 +1,85 @@
+<div class="reservations-container">
+    <div class="card">
+        <h3>Rezervacije terena/hala</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Korisnik</th>
+                        <th>Objekat</th>
+                        <th>Teren/Hala</th>
+                        <th>Sport</th>
+                        <th>Datum</th>
+                        <th>Vreme</th>
+                        <th>Status</th>
+                        <th>Akcija</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(res of reservations; track res._id) {
+                        <tr>
+                            <td>{{res.username}}</td>
+                            <td>{{res.facilityName}}</td>
+                            <td>{{res.courtName}}</td>
+                            <td>{{res.sport}}</td>
+                            <td>{{res.date | date: 'dd.MM.yyyy'}}</td>
+                            <td>{{res.startTime}} - {{res.endTime}}</td>
+                            <td>{{getReservationStatusText(res.status)}}</td>
+                            <td>
+                                @if(canConfirm(res)) {
+                                    <button (click)="confirmReservation(res)" class="approve-btn">Potvrdi</button>
+                                    <button (click)="markNoShow(res)" class="danger-btn">Odjavi</button>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        @if(reservations.length === 0) {
+            <p class="empty-state">Nema rezervacija.</p>
+        }
+    </div>
+
+    <div class="card">
+        <h3>Zakazani individualni treninzi</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Korisnik</th>
+                        <th>Trener</th>
+                        <th>Objekat</th>
+                        <th>Sport</th>
+                        <th>Datum</th>
+                        <th>Vreme</th>
+                        <th>Status</th>
+                        <th>Akcija</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(session of trainingSessions; track session._id) {
+                        <tr>
+                            <td>{{session.athleteUsername}}</td>
+                            <td>{{session.trainerFirstName}} {{session.trainerLastName}}</td>
+                            <td>{{session.facilityName}}</td>
+                            <td>{{session.sport}}</td>
+                            <td>{{session.date | date:'dd.MM.yyyy'}}</td>
+                            <td>{{session.startTime}} - {{session.endTime}}</td>
+                            <td>{{getTrainingStatusText(session.status)}}</td>
+                            <td>
+                                @if(canConfirmTraining(session)) {
+                                    <button (click)="confirmTraining(session)" class="approve-btn">Potvrdi</button>
+                                    <button (click)="markTrainingNoShow(session)" class="danger-btn">Odjavi</button>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        @if(trainingSessions.length === 0) {
+            <p class="empty-state">Nema zakazanih treninga.</p>
+        }
+    </div>
+</div>

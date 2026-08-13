@@ -1,0 +1,75 @@
+<div class="search-container">
+    <div class="card">
+        <h3>Pretraga sportskih objekata</h3>
+        <form>
+            <div class="search-fields">
+                <div class="field-group">
+                    <label>Gradovi:</label>
+                    <select multiple [(ngModel)]="selectedCities" name="cities">
+                        @for(city of cities; track city){
+                            <option [value]="city">{{city}}</option>
+                        }
+                    </select>
+                </div>
+                
+                <div class="field-group">
+                    <label>Sport:</label>
+                    <select multiple [(ngModel)]="selectedSports" name="sports">
+                        @for(sport of sports; track sport){
+                            <option [value]="sport">{{sport}}</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="field-group">
+                    <label>Tip terena:</label>
+                    <select [(ngModel)]="selectedType" name="type">
+                        <option value="">Svi tereni</option>
+                        <option value="otvoreni">Otvoreni</option>
+                        <option value="zatvoreni">Zatvoreni</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="checkbox-row">
+                <label>
+                    <input type="checkbox" [(ngModel)]="availableToday" name="availableToday">
+                    Samo slobodni termini danas
+                </label>
+            </div>
+            
+            <button type="button" (click)="findFacilities()" class="search-btn">Pretraži</button>
+        </form>
+    </div>
+
+    @if(returnedFacilities.length > 0) {
+        <div class="card">
+            <table>
+                <thead>
+                    <tr>
+                        <th (click)="sort('name')">Naziv {{getSortArrow('name')}}</th>
+                        <th (click)="sort('city')">Grad {{getSortArrow('city')}}</th>
+                        <th>Sportovi</th>
+                        <th>Akcija</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(facility of returnedFacilities; track facility._id) {
+                        <tr>
+                            <td>{{facility.name}}</td>
+                            <td>{{facility.city}}</td>
+                            <td>{{facility.sports.join(', ')}}</td>
+                            <td>
+                                <button (click)="getDetails(facility)">Detalji</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+
+    @if(returnedFacilities.length == 0 && searched) {
+        <p class="empty-state">Nema pronađenih objekata.</p>
+    }
+</div>

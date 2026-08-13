@@ -1,0 +1,222 @@
+<div class="promo-equipment-container">
+    <div class="card">
+        <h3>Nova promocija</h3>
+        <form>
+            <div class="form-row">
+                <label>Naziv:</label>
+                <input [(ngModel)]="newPromotion.name" name="promoName">
+            </div>
+            <div class="form-row">
+                <label>Opis:</label>
+                <input [(ngModel)]="newPromotion.description" name="promoDesc">
+            </div>
+            <div class="form-row">
+                <label>Tip popusta:</label>
+                <select [(ngModel)]="newPromotion.discountType" name="promoType">
+                    <option value="percentage">Procenat (%)</option>
+                    <option value="fixed">Fiksni iznos (RSD)</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label>Vrednost:</label>
+                <input type="number" [(ngModel)]="newPromotion.discountValue" name="promoValue">
+            </div>
+            <div class="form-row">
+                <label>Sportovi:</label>
+                <select multiple [(ngModel)]="newPromotion.sports" name="promoSport">
+                    @for(sport of allSports; track sport) {
+                        <option [value]="sport">{{sport}}</option>
+                    }
+                </select>
+            </div>
+            <div class="form-row">
+                <label>Objekat:</label>
+                <select [(ngModel)]="newPromotion.facilityName" name="promoFacility">
+                    @for(f of employedFacilities; track f.name) {
+                        <option [value]="f.name">{{f.name}}</option>
+                    }
+                </select>
+            </div>
+            <div class="form-row">
+                <label>Važi od:</label>
+                <input type="date" [(ngModel)]="newPromotion.validFrom" name="promoFrom">
+            </div>
+            <div class="form-row">
+                <label>Važi do:</label>
+                <input type="date" [(ngModel)]="newPromotion.validTo" name="promoTo">
+            </div>
+            <button type="button" (click)="createPromotion()">Dodaj promociju</button>
+        </form>
+        @if(createPromotionMessage) { <p class="message">{{createPromotionMessage}}</p> }
+        @if(createPromotionError) { <p class = "error">{{createPromotionError}}</p> }
+    </div>
+
+    @if(selectedPromotion.name !== '') {
+        <div class="card">
+            <h3>Ažuriraj promociju: {{selectedPromotion.name}}</h3>
+            <form>
+                <div class="form-row">
+                    <label>Vrednost:</label>
+                    <input type="number" [(ngModel)]="selectedPromotion.discountValue" name="promoValue">
+                </div>
+                <div class="form-row">
+                    <label>Sportovi:</label>
+                    <select multiple [(ngModel)]="selectedPromotion.sports" name="promoSport">
+                        @for(sport of allSports; track sport) {
+                            <option [value]="sport">{{sport}}</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label>Važi od:</label>
+                    <input type="date" [(ngModel)]="selectedPromotion.validFrom" name="promoFrom">
+                </div>
+                <div class="form-row">
+                    <label>Važi do:</label>
+                    <input type="date" [(ngModel)]="selectedPromotion.validTo" name="promoTo">
+                </div>
+                <button type="button" (click)="updatePromotion()">Ažuriraj promociju</button>
+            </form>
+            @if(updatePromotionMessage) { <p class="message">{{updatePromotionMessage}}</p> }
+            @if(updatePromotionError) { <p class = "error">{{updatePromotionError}}</p> }
+        </div>
+    }
+
+    <div class="card">
+        <h3>Postojeće promocije</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Naziv</th>
+                        <th>Objekat</th>
+                        <th>Popust</th>
+                        <th>Sport</th>
+                        <th>Važi od</th>
+                        <th>Važi do</th>
+                        <th>Status</th>
+                        <th>Akcija</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(promo of promotions; track promo._id) {
+                        <tr>
+                            <td>{{promo.name}}</td>
+                            <td>{{promo.facilityName}}</td>
+                            <td>{{promo.discountValue}}{{promo.discountType === 'percentage' ? '%' : ' RSD'}}</td>
+                            <td>{{promo.sports}}</td>
+                            <td>{{promo.validFrom | date:'dd.MM.yyyy'}}</td>
+                            <td>{{promo.validTo | date:'dd.MM.yyyy'}}</td>
+                            <td>@if(promo.status == 'active'){Aktivna}</td>
+                            <td><button (click)="selectPromotion(promo)">Ažuriraj</button></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Dodaj novu opremu</h3>
+        <form>
+            <div class="form-row">
+                <label>Naziv:</label>
+                <input [(ngModel)]="newEquipment.name" name="eqName">
+            </div>
+            <div class="form-row">
+                <label>Kategorija:</label>
+                <input [(ngModel)]="newEquipment.category" name="eqCat">
+            </div>
+            <div class="form-row">
+                <label>Cena:</label>
+                <input type="number" [(ngModel)]="newEquipment.price" name="eqPrice">
+            </div>
+            <div class="form-row">
+                <label>Stanje:</label>
+                <input type="number" [(ngModel)]="newEquipment.stock" name="eqStock">
+            </div>
+            <div class="form-row">
+                <label>Slika:</label>
+                <input type="file" (change)="onEquipmentImageSelected($event)" accept="image/*">
+            </div>
+            <button type="button" (click)="addEquipment()">Dodaj opremu</button>
+        </form>
+        @if(createEquipmentMessage) { <p class="message">{{createEquipmentMessage}}</p> }
+        @if(createEquipmentError) { <p class = "error">{{createEquipmentError}}</p> }
+    </div>
+
+    <div class="card">
+        <h3>Postojeća oprema</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Slika</th>
+                        <th>Naziv</th>
+                        <th>Kategorija</th>
+                        <th>Cena</th>
+                        <th>Stanje</th>
+                        <th>Akcija</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(eq of equipment; track eq._id) {
+                        <tr>
+                            <td><img [src]="'http://localhost:4000/uploads/equipment/' + eq.image" width="50"></td>
+                            <td>{{eq.name}}</td>
+                            <td>{{eq.category}}</td>
+                            <td>{{eq.price}} RSD</td>
+                            <td>
+                                <input type="number" [(ngModel)]="eq.stock" (ngModelChange)="updateStock(eq)" class="stock-input">
+                            </td>
+                            <td>
+                                <button (click)="updatePrice(eq)">Ažuriraj cenu</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        @if(updateEquipmentMessage) { <p class="message">{{updateEquipmentMessage}}</p> }
+        @if(updateEquipmentError) { <p class = "error">{{updateEquipmentError}}</p> }
+    </div>
+
+    <div class="card">
+        <h3>Porudžbine</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Korisnik</th>
+                        <th>Stavke</th>
+                        <th>Ukupno</th>
+                        <th>Status</th>
+                        <th>Akcija</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(order of orders; track order._id) {
+                        <tr>
+                            <td>{{order.username}}</td>
+                            <td>
+                                @for(item of order.items; track item.equipmentName) {
+                                    {{item.equipmentName}} (x{{item.quantity}})<br>
+                                }
+                            </td>
+                            <td>{{order.totalAmount}} RSD</td>
+                            <td>{{getOrderStatusText(order.status)}}</td>
+                            <td>
+                                @if(order.status === 'ordered') {
+                                    <button (click)="updateOrderStatus(order, 'picked_up')" class="approve-btn">Preuzeto</button>
+                                    <button (click)="updateOrderStatus(order, 'cancelled')" class="danger-btn">Otkaži</button>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        @if(updateOrderMessage) { <p class="message">{{updateOrderMessage}}</p> }
+        @if(updateOrderError) { <p class = "error">{{updateOrderError}}</p>}
+    </div>
+</div>

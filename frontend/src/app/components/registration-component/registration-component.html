@@ -1,0 +1,104 @@
+<div class="register-container">
+    <div class="card">
+        <h3>Registracija</h3>
+
+        <form>
+            <div class="form-row">
+                <label>Korisnicko ime:</label>
+                <input type="text" name="username" [(ngModel)]="username">
+            </div>
+
+            <div class="form-row">
+                <label>Lozinka:</label>
+                <input type="password" name="password" [(ngModel)]="password">
+                <small>8-12 karaktera, bar jedno veliko slovo, jedan broj i jedan specijalni karakter, mora pocinjati slovom.</small>
+            </div>
+
+            <div class="form-row">
+                <label>Ime:</label>
+                <input type="text" name="firstName" [(ngModel)]="firstName">
+            </div>
+
+            <div class="form-row">
+                <label>Prezime:</label>
+                <input type="text" name="lastName" [(ngModel)]="lastName">
+            </div>
+
+            <div class="form-row">
+                <label>Broj telefona:</label>
+                <input type="text" name="phoneNumber" [(ngModel)]="phoneNumber">
+            </div>
+
+            <div class="form-row">
+                <label>Mejl:</label>
+                <input type="email" name="mail" [(ngModel)]="mail">
+            </div>
+
+            <div class="form-row">
+                <label>Omiljeni sportovi (najvise 5):</label>
+                <select multiple [(ngModel)]="selectedSports" name="selectedSports">
+                    @for(sport of availableSports; track sport) {
+                        <option [value]="sport" [disabled] = "checkSportCondition(sport)">{{ sport }}</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-row">
+                <label>Zaposleni:</label>
+                <input type="checkbox" name="employed" (click)="toggleRole()">
+            </div>
+
+            @if(role === 'zaposleni') {
+                <div class="form-row">
+                    <label>Naziv sportskog objekta:</label>
+                    <input type="text" name="facilityName" [(ngModel)]="facilityName">
+                </div>
+
+                <div class="form-row">
+                    <label>Adresa sedišta:</label>
+                    <input type="text" name="facilityAddress" [(ngModel)]="facilityAddress">
+                </div>
+
+                <div class="form-row">
+                    <label>Matični broj (8 cifara):</label>
+                    <input type="text" name="registrationNumber" [(ngModel)]="registrationNumber" maxlength="8">
+                </div>
+
+                <div class="form-row">
+                    <label>PIB (9 cifara):</label>
+                    <input type="text" name="pib" [(ngModel)]="pib" maxlength="9">
+                </div>
+            }
+            
+            <div class="form-row image-row">
+                <label>Profilna slika:</label>
+                <div class="image-buttons">
+                    <label class="file-select-btn">
+                        Izaberi sliku
+                        <input type="file" (change)="onFileSelected($event)" accept="image/*" hidden>
+                    </label>
+                    <button type="button" class="avatar-btn" (click)="generateAvatar()">Generiši avatar</button>
+                </div>
+            </div>
+
+            @if(imagePreview) {
+                <div class="image-preview">
+                    <img [src]="imagePreview" alt="Preview" width="150">
+                </div>
+            }
+
+            <button type="button" class="submit-btn" (click)="onSubmit()">Registruj se</button>
+        </form>
+
+        @if(message) {
+            <p class="message">{{message}}</p>
+        }
+        @if(error) {
+            <p class="error">{{error}}</p>
+        }
+
+        <p class="back-link">
+            <a routerLink="/welcome">Vec imate nalog? Prijavite se</a>
+        </p>
+    </div>
+</div>

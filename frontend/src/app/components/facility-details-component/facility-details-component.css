@@ -1,0 +1,172 @@
+.facility-details-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #1a5276;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* Header */
+.facility-header h2 {
+    margin: 0 0 5px 0;
+    border-bottom: none;
+    color: #1a5276;
+}
+
+.facility-city {
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.facility-stats {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    background: #f0f4f8;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Table */
+table {
+    margin: 0;
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+th {
+    background-color: #1a5276;
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 14px;
+}
+
+td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tr:hover {
+    background-color: #eaf2f8;
+}
+
+/* Gallery */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.gallery-image {
+    width: 200px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    object-fit: cover;
+}
+
+.empty-state {
+    text-align: center;
+    color: #999;
+    padding: 20px;
+    font-style: italic;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .table-wrapper table {
+        min-width: 700px;
+    }
+
+    .profile-container {
+        padding: 5px;
+    }
+
+    .card {
+        padding: 12px;
+    }
+
+    .profile-view {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .file-select-btn,
+    .avatar-btn {
+        width: 100%;
+        margin: 0;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+        height: auto;
+    }
+
+    th, td {
+        padding: 6px 8px;
+        white-space: nowrap;
+    }
+
+    td button {
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+
+    .form-row input,
+    .form-row select {
+        font-size: 13px;
+    }
+
+    h3 {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    td button {
+        display: block;
+        width: 100%;
+        margin: 2px 0;
+    }
+}

@@ -1,0 +1,58 @@
+<div class="facility-details-container">
+    @if(facility) {
+        <div class="card facility-header">
+            <h2>{{facility.name}}</h2>
+            <p class="facility-city">{{facility.city}} - {{facility.address}}</p>
+            <div class="facility-stats">
+                <span class="stat-item">Cena: <strong>{{facility.pricePerHour}} RSD/sat</strong></span>
+                <span class="stat-item">Radno vreme: <strong>{{facility.workingHours.open}} - {{facility.workingHours.close}}</strong></span>
+            </div>
+            <br>
+            <h3>Opis</h3>
+            <p>{{facility.description}}</p>
+        </div>
+
+        <div class="card">
+            <h3>Dostupni tereni i hale</h3>
+            <div class = "table-wrapper">
+              <table>
+                  <thead>
+                      <tr>
+                          <th>Naziv</th>
+                          <th>Tip</th>
+                          <th>Sport</th>
+                          <th>Kapacitet</th>
+                          <th>Oprema</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      @for(court of facility.courts; track court.name) {
+                          <tr>
+                              <td>{{court.name}}</td>
+                              <td>{{court.type}}</td>
+                              <td>{{court.sport}}</td>
+                              <td>{{court.capacity}}</td>
+                              <td>{{court.equipmentDescription}}</td>
+                          </tr>
+                      }
+                  </tbody>
+              </table>
+            </div>
+        </div>
+
+        @if(facility.images && facility.images.length > 0) {
+            <div class="card">
+                <h3>Galerija slika</h3>
+                <div class="gallery">
+                    @for(img of facility.images; track img) {
+                        <img [src]="'http://localhost:4000/uploads/facilities/' + img" class="gallery-image">
+                    }
+                </div>
+            </div>
+        }
+    } @else {
+        <div class="card">
+            <p class="empty-state">Nema podataka</p>
+        </div>
+    }
+</div>

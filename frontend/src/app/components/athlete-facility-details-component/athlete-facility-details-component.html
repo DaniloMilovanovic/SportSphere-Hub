@@ -1,0 +1,165 @@
+<div class="facility-details-container">
+    @if(facility) {
+        <div class="card facility-header">
+            <h2>{{facility.name}}</h2>
+            <p class="facility-location">{{facility.city}} - {{facility.address}}</p>
+            <div class="facility-stats">
+                <span class="stat-item">Cena: <strong>{{facility.pricePerHour}} RSD/sat</strong></span>
+                <span class="stat-item">Radno vreme: <strong>{{facility.workingHours.open}} - {{facility.workingHours.close}}</strong></span>
+            </div>
+            <br>
+            <h3>Opis</h3>
+            <p>{{facility.description}}</p>
+        </div>
+
+        <div class="card">
+            <h3>Dostupni tereni i hale</h3>
+            <div class="table-wrapper">
+              <table>
+                  <thead>
+                      <tr>
+                          <th>Naziv</th>
+                          <th>Tip</th>
+                          <th>Sport</th>
+                          <th>Kapacitet</th>
+                          <th>Oprema</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      @for(court of facility.courts; track court.name) {
+                          <tr>
+                              <td>{{court.name}}</td>
+                              <td>{{court.type}}</td>
+                              <td>{{court.sport}}</td>
+                              <td>{{court.capacity}}</td>
+                              <td>{{court.equipmentDescription}}</td>
+                          </tr>
+                      }
+                  </tbody>
+              </table>
+            </div>
+        </div>
+
+        @if(facility.images && facility.images.length > 0) {
+            <div class="card">
+                <h3>Galerija slika</h3>
+                <div class="gallery">
+                    @for(img of facility.images; track img) {
+                        <img [src]="'http://localhost:4000/uploads/facilities/' + img" width="200">
+                    }
+                </div>
+            </div>
+        }
+
+        <div class="card court-selection">
+            <h3>Izaberite teren/halu</h3>
+            <p>
+                @if(filteredCourts.length > 1) {
+                    <button (click)="previousCourt()">◄</button>
+                }
+                <strong>{{selectedCourt?.name}} ({{selectedCourt?.type}}) - {{selectedCourt?.sport}}</strong>
+                @if(filteredCourts.length > 1) {
+                    <button (click)="nextCourt()">►</button>
+                }
+            </p>
+            @if(selectedCourt) {
+                <p>Oprema: {{selectedCourt.equipmentDescription}}</p>
+                <p class = "capacity">Kapacitet: {{selectedCourt.capacity}}</p>
+            }
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <button (click)="previousWeek()">◄ Prethodna nedelja</button>
+                    <h3>{{weekRange}}</h3>
+                    <button (click)="nextWeek()">Sledeća nedelja ►</button>
+                </div>
+                <div class="calendar-table-wrapper">
+                    <table class="calendar-table">
+                        <thead>
+                            <tr>
+                                <th class="time-header">Vreme</th>
+                                @for(day of weekDays; track day.date) {
+                                    <th>{{day.name}}<br>{{day.date.getUTCDate()}}.{{day.date.getUTCMonth() + 1}}</th>
+                                }
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for(hour of hours; track hour) {
+                                <tr>
+                                    <td class="time-cell">{{hour}}:00</td>
+                                    @for(day of weekDays; track day.date) {
+                                        <td class="slot-cell"
+                                            [class.booked]="isSlotBooked(day.date, hour)"
+                                            [class.outside-hours]="!isWithinWorkingHours(hour)"
+                                            [class.selected]="isSlotSelected(day.date, hour)"
+                                            (click)="onSlotClick(day.date, hour)">
+                                        </td>
+                                    }
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        @if(selectedSlots.length > 0) {
+            <div class="booking-summary">
+                <h3>Izabrani termin</h3>
+                <p>{{selectedSlots[0].date.getUTCDate()}}.{{selectedSlots[0].date.getUTCMonth() + 1}}.{{selectedSlots[0].date.getUTCFullYear()}} - {{getStartHour()}}:00 - {{getEndHour()}}:00</p>
+                <button (click)="bookSelectedSlots()">Rezerviši</button>
+            </div>
+        }
+
+        <div class="card booking-form">
+            <h3>Rezervacija preko forme</h3>
+            <form>
+                <label>Datum:</label>
+                <input type="date" [(ngModel)]="formDate" name="formDate"><br><br>
+                <label>Vreme od:</label>
+                <select [(ngModel)]="formStartHour" name="formStartHour" (change)="updateEndHourOptions()">
+                    <option value="">Izaberi</option>
+                    @for(hour of availableStartHours; track hour) {
+                        <option [value]="hour">{{hour}}:00</option>
+                    }
+                </select><br><br>
+                <label>Vreme do:</label>
+                <select [(ngModel)]="formEndHour" name="formEndHour">
+                    <option value="">Izaberi</option>
+                    @for(hour of formEndHourOptions; track hour) {
+                        <option [value]="hour">{{hour}}:00</option>
+                    }
+                </select><br><br>
+                <button type="button" (click)="bookViaForm()">Rezerviši</button>
+            </form>
+        </div>
+
+        @if(message) {
+            <p class="message">{{message}}</p>
+        }
+
+        <div class="card">
+            <h3>Ocene i komentari</h3>
+            @for(review of reviews; track review._id) {
+                <div class="review-item" [class.own-review]="review.username === getUser().username">
+                    <div class="review-header">
+                        <strong>{{review.username}}</strong>
+                        <small>{{review.createdAt | date:'dd.MM.yyyy HH:mm'}}</small>
+                    </div>
+                    <div class="review-body">
+                        @if(review.comment) {
+                            <p>{{review.comment}}</p>
+                        }
+                    </div>
+                </div>
+            }
+            @if(reviews.length === 0) {
+                <p class="empty-state">Jos uvek nema komentara za ovaj objekat.</p>
+            }
+        </div>
+
+        <div class="card">
+            <h3>Lokacija</h3>
+            <div id="map"></div>
+        </div>
+    }
+</div>

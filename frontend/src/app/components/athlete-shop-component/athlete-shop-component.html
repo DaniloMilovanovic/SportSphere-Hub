@@ -1,0 +1,95 @@
+<div class="shop-container">
+    <div class="card">
+        <h3>Izaberite sport</h3>
+        <form>
+            <div class="form-row">
+                <select multiple [(ngModel)]="selectedSports" name="sports">
+                    @for(sport of sports; track sport) {
+                        <option [value]="sport">{{sport}}</option>
+                    }
+                </select>
+            </div>
+            <button type="button" (click)="searchEquipment()">Pretraži</button>
+        </form>
+    </div>
+
+    @if(equipment.length > 0) {
+        <div class="card">
+            <h3>Katalog opreme</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Slika</th>
+                            <th>Naziv</th>
+                            <th>Cena</th>
+                            <th>Na stanju</th>
+                            <th>Akcija</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for(e of equipment; track e._id) {
+                            <tr>
+                                <td><img [src]="'http://localhost:4000/uploads/equipment/' + e.image" width="80"></td>
+                                <td>{{e.name}}</td>
+                                <td>{{e.price}} RSD</td>
+                                <td>{{e.stock}}</td>
+                                <td>
+                                    <input type="number" #count [max]="e.stock" [min]="1" value="1" class="qty-input">
+                                    <button (click)="addToCart(e, count.value)">Dodaj u korpu</button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    } @else {
+        <div class="card">
+            <p class="empty-state">Izaberite sport za prikaz opreme.</p>
+        </div>
+    }
+
+    <div class="card">
+        <h3>Vaša korpa</h3>
+        @if(shopService.cart.length > 0) {
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Slika</th>
+                            <th>Naziv</th>
+                            <th>Cena</th>
+                            <th>Kolicina</th>
+                            <th>Akcija</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for(item of shopService.cart; track item.equipmentName) {
+                            <tr>
+                                <td><img [src]="'http://localhost:4000/uploads/equipment/' + item.image" width="60"></td>
+                                <td>{{item.equipmentName}}</td>
+                                <td>{{item.price}} RSD</td>
+                                <td>{{item.quantity}}</td>
+                                <td>
+                                    <button (click)="discardItem(item)">Odbaci</button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <p class="total-price">Ukupno: <strong>{{shopService.price}} RSD</strong></p>
+            <div class="cart-buttons">
+                <button (click)="orderCart()">Završi kupovinu</button>
+                <button (click)="discardAllItemsFromCart()" class="cancel-btn">Isprazni korpu</button>
+            </div>
+        } @else {
+            <p class="empty-state">Korpa je prazna.</p>
+        }
+    </div>
+
+    @if(message) {
+        <p class="message">{{message}}</p>
+    }
+</div>

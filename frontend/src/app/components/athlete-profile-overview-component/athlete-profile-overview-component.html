@@ -1,0 +1,222 @@
+<div class="profile-container">
+    <div class="card">
+        <h3>Lični podaci</h3>
+
+        @if(!changingProfile){
+            <div class="profile-view">
+                <img [src]="imagePreview" alt="Profile" class="profile-image">
+                <div class="profile-info">
+                    <p><strong>Korisnicko ime:</strong> {{user.username}}</p>
+                    <p><strong>Ime:</strong> {{user.firstName}}</p>
+                    <p><strong>Prezime:</strong> {{user.lastName}}</p>
+                    <p><strong>Broj telefona:</strong> {{user.phone}}</p>
+                    <p><strong>Mejl:</strong> {{user.email}}</p>
+                    <p><strong>Omiljeni sportovi:</strong> 
+                        @for(sport of user.favoriteSports; track sport) {
+                            <span class="sport-tag">{{sport}}</span>
+                        }
+                    </p>
+                </div>
+                <button (click)="editProfile()">Uredi profil</button>
+            </div>
+        } @else {
+            <form>
+                <div class="form-row">
+                    <label>Korisnicko ime:</label>
+                    <input type="text" [(ngModel)]="editUser.username" name="username" disabled>
+                </div>
+                <div class="form-row">
+                    <label>Ime:</label>
+                    <input type="text" [(ngModel)]="editUser.firstName" name="firstName">
+                </div>
+                <div class="form-row">
+                    <label>Prezime:</label>
+                    <input type="text" [(ngModel)]="editUser.lastName" name="lastName">
+                </div>
+                <div class="form-row">
+                    <label>Broj telefona:</label>
+                    <input type="text" [(ngModel)]="editUser.phone" name="phone">
+                </div>
+                <div class="form-row">
+                    <label>Mejl:</label>
+                    <input type="email" [(ngModel)]="editUser.email" name="email">
+                </div>
+                <div class="form-row">
+                    <label>Omiljeni sportovi (najvise 5):</label>
+                    <select multiple [(ngModel)]="editUser.favoriteSports" name="sport">
+                        @for(sport of availableSports; track sport) {
+                            <option [value]="sport" [disabled]="checkSportCondition(sport)">{{sport}}</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label>Profilna slika:</label>
+                    <div class="image-buttons">
+                        <label class="file-select-btn">
+                            Izaberi sliku
+                            <input type="file" (change)="onFileSelected($event)" accept="image/*" hidden>
+                        </label>
+                        <button type="button" class="avatar-btn" (click)="generateAvatar()">Generiši avatar</button>
+                    </div>
+                </div>
+                @if(editImagePreview) {
+                    <div class="image-preview">
+                        <img [src]="editImagePreview" alt="Preview" class="profile-image">
+                    </div>
+                }
+                <div class="form-buttons">
+                    <button type="button" (click)="onSubmit()" class="save-btn">Sačuvaj izmene</button>
+                    <button type="button" (click)="onReject()" class="cancel-btn">Odbaci izmene</button>
+                </div>
+            </form>
+        }
+    </div>
+
+    <div class="card">
+        <h3>Moje rezervacije</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th (click)="sortReservations('facilityName')">Objekat {{getSortArrow('facilityName')}}</th>
+                        <th (click)="sortReservations('city')">Grad {{getSortArrow('city')}}</th>
+                        <th (click)="sortReservations('courtName')">Teren/Hala {{getSortArrow('courtName')}}</th>
+                        <th (click)="sortReservations('sport')">Sport {{getSortArrow('sport')}}</th>
+                        <th (click)="sortReservations('date')">Termin {{getSortArrow('date')}}</th>
+                        <th (click)="sortReservations('status')">Status {{getSortArrow('status')}}</th>
+                        <th>Akcija</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(res of userReservations; track res._id) {
+                        <tr>
+                            <td>{{res.facilityName}}</td>
+                            <td>{{res.city}}</td>
+                            <td>{{res.courtName}}</td>
+                            <td>{{res.sport}}</td>
+                            <td>{{res.date | date:'dd.MM.yyyy'}} {{res.startTime}} - {{res.endTime}}</td>
+                            <td>{{getReservationStatusText(res.status)}}</td>
+                            <td>
+                                @if(canCancel(res)) {
+                                    <button (click)="cancelReservation(res)">Otkaži</button>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        @if(userReservations.length === 0) {
+            <p class="empty-state">Nemate rezervacija.</p>
+        }
+    </div>
+
+    <div class="card">
+        <h3>Moji treninzi</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sport</th>
+                        <th>Objekat</th>
+                        <th>Datum</th>
+                        <th>Vreme</th>
+                        <th>Cena</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(session of trainingSessions; track session._id) {
+                        <tr>
+                            <td>{{session.sport}}</td>
+                            <td>{{session.facilityName}}</td>
+                            <td>{{session.date | date:'dd.MM.yyyy'}}</td>
+                            <td>{{session.startTime}} - {{session.endTime}}</td>
+                            <td>{{session.totalPrice}} RSD</td>
+                            <td>{{getTrainingStatusText(session.status)}}</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        @if(trainingSessions.length === 0) {
+            <p class="empty-state">Nemate zakazanih treninga.</p>
+        }
+    </div>
+
+    <div class="card">
+        <h3>Aktivne porudžbine</h3>
+        @if(activeOrders.length > 0) {
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Datum</th>
+                            <th>Stavke</th>
+                            <th>Ukupno</th>
+                            <th>Status</th>
+                            <th>Akcija</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for(order of activeOrders; track order._id) {
+                            <tr>
+                                <td>{{order.createdAt | date: "short"}}</td>
+                                <td>
+                                    @for(item of order.items; track item.equipmentName) {
+                                        {{item.equipmentName}} (x{{item.quantity}})<br>
+                                    }
+                                </td>
+                                <td>{{order.totalAmount}} RSD</td>
+                                <td>{{getOrderStatusText(order.status)}}</td>
+                                <td>
+                                    <button (click)="cancelOrder(order)">Otkaži</button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        } @else {
+            <p class="empty-state">Nemate aktivnih porudzbina.</p>
+        }
+    </div>
+
+    <div class="card">
+        <h3>Istorija kupovine</h3>
+        @if(oldOrders.length > 0) {
+            <div class = "table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Datum</th>
+                            <th>Stavke</th>
+                            <th>Ukupno</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for(order of oldOrders; track order._id) {
+                            <tr>
+                                <td>{{order.createdAt | date: "short"}}</td>
+                                <td>
+                                    @for(item of order.items; track item.equipmentName) {
+                                        {{item.equipmentName}} (x{{item.quantity}})<br>
+                                    }
+                                </td>
+                                <td>{{order.totalAmount}} RSD</td>
+                                <td>{{getOrderStatusText(order.status)}}</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        } @else {
+            <p class="empty-state">Nemate prethodnih kupovina.</p>
+        }
+    </div>
+
+    @if(message) {
+        <p class="message">{{message}}</p>
+    }
+</div>

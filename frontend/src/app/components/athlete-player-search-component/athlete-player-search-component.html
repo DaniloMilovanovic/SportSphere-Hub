@@ -1,0 +1,149 @@
+<div class="teammate-container">
+    <div class="card">
+        <h3>Trazi saigrace</h3>
+        <form>
+            <div class="form-row">
+                <label>Grad:</label>
+                <select [(ngModel)]="selectedCity" name="city">
+                    @for(city of cities; track city) {
+                        <option [value]="city">{{city}}</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-row">
+                <label>Sport:</label>
+                <select [(ngModel)]="selectedSport" name="sport">
+                    @for(sport of sports; track sport) {
+                        <option [value]="sport">{{sport}}</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-row">
+                <label>Datum:</label>
+                <input type="date" [(ngModel)]="selectedDate" name="selectedDate">
+            </div>
+
+            <div class="form-row">
+                <label>Vreme od:</label>
+                <select [(ngModel)]="startHour" name="startHour" (change)="updateEndHourOptions()">
+                    <option value="">Izaberi</option>
+                    @for(hour of availableStartHours; track hour) {
+                        <option [value]="hour">{{hour}}:00</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-row">
+                <label>Vreme do:</label>
+                <select [(ngModel)]="endHour" name="endHour">
+                    <option value="">Izaberi</option>
+                    @for(hour of formEndHourOptions; track hour) {
+                        <option [value]="hour">{{hour}}:00</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-row">
+                <label>Broj igrača:</label>
+                <input type="number" [(ngModel)]="numPlayers" name="numPlayers" min="1">
+            </div>
+
+            <button type="button" (click)="generateAdvertisement()">Objavi oglas</button>
+        </form>
+        @if(createMessage) {
+            <p class="message">{{createMessage}}</p>
+        }
+    </div>
+
+    <div class="card">
+        <h3>Aktivni oglasi</h3>
+        @if(allAdvertisements.length > 0) {
+          <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sport</th>
+                        <th>Grad</th>
+                        <th>Datum</th>
+                        <th>Vreme</th>
+                        <th>Autor</th>
+                        <th>Fali igrača</th>
+                        <th>Akcija</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(ad of allAdvertisements; track ad._id) {
+                        <tr>
+                            <td>{{ad.sport}}</td>
+                            <td>{{ad.city}}</td>
+                            <td>{{ad.date | date:'dd.MM.yyyy'}}</td>
+                            <td>{{ad.startTime}} - {{ad.endTime}}</td>
+                            <td>{{ad.authorUsername}}</td>
+                            <td>{{ad.missingPlayers}}</td>
+                            <td>
+                                @if(ad.authorUsername === currentUser.username && ad.status === 'active') {
+                                    <button (click)="closeAd(ad)">Zatvori</button>
+                                }
+                                @if(ad.authorUsername !== currentUser.username && ad.status === 'active') {
+                                    <button (click)="sendRequest(ad)">Pridruži se</button>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+          </div>
+        } @else {
+            <p class="empty-state">Trenutno nema aktivnih oglasa.</p>
+        }
+        @if(joinMessage) {
+            <p class="message">{{joinMessage}}</p>
+        }
+    </div>
+
+    <div class="card">
+        <h3>Zahtevi za pridruživanje vasim oglasima</h3>
+        @if(userAdvertisementRequests.length > 0) {
+          <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sport</th>
+                        <th>Grad</th>
+                        <th>Datum</th>
+                        <th>Vreme</th>
+                        <th>Korisnik</th>
+                        <th>Datum zahteva</th>
+                        <th>Akcija</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(ad of userAdvertisementRequests; track ad._id) {
+                        @for(request of ad.requests; track request.username) {
+                            @if(request.status === 'pending') {
+                                <tr>
+                                    <td>{{ad.sport}}</td>
+                                    <td>{{ad.city}}</td>
+                                    <td>{{ad.date | date:'dd.MM.yyyy'}}</td>
+                                    <td>{{ad.startTime}} - {{ad.endTime}}</td>
+                                    <td>{{request.username}}</td>
+                                    <td>{{request.requestDate | date:'dd.MM.yyyy HH:mm'}}</td>
+                                    <td>
+                                        <button class = "acceptButton" (click)="approveRequest(ad, request.username)">Prihvati</button>
+                                        <button (click)="rejectRequest(ad, request.username)">Odbij</button>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    }
+                </tbody>
+            </table>
+          </div>
+        }
+        @else{
+          <p class="empty-state">Nemate novih zahteva za pridruživanje.</p>
+        }
+    </div>
+</div>

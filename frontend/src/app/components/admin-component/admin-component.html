@@ -1,0 +1,259 @@
+<div class="admin-container">
+
+  
+    @if(editingUser) {
+        <div class="card edit-card">
+            <h3>Izmena korisnika: {{editingUser.username}}</h3>
+            <form>
+                <div class="form-row">
+                    <label>Ime:</label>
+                    <input [(ngModel)]="editingUser.firstName" name="firstName">
+                </div>
+                <div class="form-row">
+                    <label>Prezime:</label>
+                    <input [(ngModel)]="editingUser.lastName" name="lastName">
+                </div>
+                <div class="form-row">
+                    <label>Mejl:</label>
+                    <input [(ngModel)]="editingUser.email" name="email">
+                </div>
+                <div class="form-row">
+                    <label>Broj telefona:</label>
+                    <input [(ngModel)]="editingUser.phone" name="phone">
+                </div>
+                @if(editingUser.employeeInfo) {
+                    <div class="form-row">
+                        <label>Sportski objekat:</label>
+                        <input [(ngModel)]="editingUser.employeeInfo.facilityName" name="facilityName">
+                    </div>
+                    <div class="form-row">
+                        <label>Adresa:</label>
+                        <input [(ngModel)]="editingUser.employeeInfo.facilityAddress" name="facilityAddress">
+                    </div>
+                    <div class="form-row">
+                        <label>Maticni broj:</label>
+                        <input [(ngModel)]="editingUser.employeeInfo.registrationNumber" name="registrationNumber">
+                    </div>
+                    <div class="form-row">
+                        <label>PIB:</label>
+                        <input [(ngModel)]="editingUser.employeeInfo.pib" name="pib">
+                    </div>
+                }
+                <div class="edit-buttons">
+                    <button type="button" (click)="saveEdit()">Sačuvaj</button>
+                    <button type="button" (click)="cancelEdit()" class="cancel-btn">Odustani</button>
+                </div>
+            </form>
+        </div>
+    }
+
+    <div class="card">
+        <h3>Svi korisnici</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Korisničko ime</th>
+                        <th>Mejl</th>
+                        <th>Ime</th>
+                        <th>Prezime</th>
+                        <th>Telefon</th>
+                        <th>Tip</th>
+                        <th>Status</th>
+                        <th>Detalji</th>
+                        <th>Akcije</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(user of users; track user.username) {
+                        @if(user.status != "pending"){
+                            
+                        <tr>
+                            <td>{{user.username}}</td>
+                            <td>{{user.email}}</td>
+                            <td>{{user.firstName}}</td>
+                            <td>{{user.lastName}}</td>
+                            <td>{{user.phone}}</td>
+                            <td>{{user.role}}</td>
+                            <td>{{getUserStatusText(user.status)}}</td>
+                            <td>
+                                @if(user.role === 'zaposleni' && user.employeeInfo) {
+                                    {{user.employeeInfo.facilityName}}, 
+                                    PIB: {{user.employeeInfo.pib}}
+                                }
+                            </td>
+                            <td>
+                                <button (click)="modifyUser(user)">Izmeni</button>
+                                <button (click)="deleteUser(user)" class="danger-btn">Obriši</button>
+                            </td>
+                        </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Zahtevi za registraciju</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Korisničko ime</th>
+                        <th>Mejl</th>
+                        <th>Ime</th>
+                        <th>Prezime</th>
+                        <th>Telefon</th>
+                        <th>Tip</th>
+                        <th>Status</th>
+                        <th>Detalji</th>
+                        <th>Akcije</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(user of pendingUsers; track user.username) {
+                        <tr>
+                            <td>{{user.username}}</td>
+                            <td>{{user.email}}</td>
+                            <td>{{user.firstName}}</td>
+                            <td>{{user.lastName}}</td>
+                            <td>{{user.phone}}</td>
+                            <td>{{user.role}}</td>
+                            <td>{{getUserStatusText(user.status)}}</td>
+                            <td>
+                                @if(user.role === 'zaposleni' && user.employeeInfo) {
+                                    {{user.employeeInfo.facilityName}}, 
+                                    PIB: {{user.employeeInfo.pib}}
+                                }
+                            </td>
+                            <td>
+                                <button (click)="acceptUser(user)" class="approve-btn">Odobri</button>
+                                <button (click)="rejectUser(user)" class="danger-btn">Odbij</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        @if(pendingUsers.length === 0) {
+            <p class="empty-state">Nema zahteva za registraciju.</p>
+        }
+    </div>
+
+
+    <div class="card">
+        <h3>Objekti na čekanju</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Naziv</th>
+                        <th>Grad</th>
+                        <th>Adresa</th>
+                        <th>Sportovi</th>
+                        <th>Cena/sat</th>
+                        <th>Akcija</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(facility of pendingFacilities; track facility.name) {
+                        <tr>
+                            <td>{{facility.name}}</td>
+                            <td>{{facility.city}}</td>
+                            <td>{{facility.address}}</td>
+                            <td>{{facility.sports.join(', ')}}</td>
+                            <td>{{facility.pricePerHour}} RSD</td>
+                            <td>
+                                <button (click)="approveFacility(facility)" class="approve-btn">Odobri</button>
+                                <button (click)="rejectFacility(facility)" class="danger-btn">Odbij</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        @if(pendingFacilities.length === 0) {
+            <p class="empty-state">Nema objekata na čekanju.</p>
+        }
+    </div>
+
+    <div class="card">
+        <h3>Treneri</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ime</th>
+                        <th>Prezime</th>
+                        <th>Specijalizacija</th>
+                        <th>Objekat</th>
+                        <th>Cena/sat</th>
+                        <th>Status</th>
+                        <th>Akcija</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(trainer of trainers; track trainer._id) {
+                        <tr>
+                            <td>{{trainer.firstName}}</td>
+                            <td>{{trainer.lastName}}</td>
+                            <td>{{trainer.specialization}}</td>
+                            <td>{{trainer.facilityName}}</td>
+                            <td>{{trainer.pricePerHour}} RSD</td>
+                            <td>@if(trainer.status == 'active'){Aktivan} @else {Neaktivan}</td>
+                            <td>
+                                @if(trainer.status === 'active') {
+                                    <button (click)="deactivateTrainer(trainer)" class="danger-btn">Deaktiviraj</button>
+                                } @else {
+                                    <button (click)="activateTrainer(trainer)" class="approve-btn">Aktiviraj</button>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        @if(trainers.length === 0) {
+            <p class="empty-state">Nema registrovanih trenera.</p>
+        }
+    </div>
+
+    <div class="card">
+        <h3>Dodaj novi sport</h3>
+        <form>
+            <div class="form-row">
+                <label>Naziv novog sporta:</label>
+                <input type="text" [(ngModel)]="newSport" name="sport">
+            </div>
+            <button type="button" (click)="addSport()">Dodaj</button>
+        </form>
+    </div>
+
+    <div class="card">
+        <h3>Postojeći sportovi</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Naziv</th>
+                        <th>Akcija</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(sport of sports; track sport) {
+                        <tr>
+                            <td>{{sport}}</td>
+                            <td>
+                                <button (click)="deleteSport(sport)" class="danger-btn">Obriši</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        @if(sports.length === 0) {
+            <p class="empty-state">Nema registrovanih sportova.</p>
+        }
+    </div>
+</div>

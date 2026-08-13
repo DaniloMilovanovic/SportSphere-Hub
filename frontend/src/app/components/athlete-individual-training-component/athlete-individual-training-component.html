@@ -1,0 +1,136 @@
+<div class="training-container">
+    <div class="card">
+        <h3>Pronađi trenera</h3>
+        <form>
+            <div class="search-row">
+                <div class="form-group">
+                    <label>Sport:</label>
+                    <select [(ngModel)]="selectedSport" name="sports">
+                        @for(sport of sports; track sport) {
+                            <option [value]="sport">{{sport}}</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Sportski objekat:</label>
+                    <select [(ngModel)]="selectedFacility" name="facilities">
+                        @for(facility of facilities; track facility._id) {
+                            <option [ngValue]="facility">{{facility.name}}</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <button type="button" (click)="searchTrainers()">Pretraži</button>
+        </form>
+    </div>
+
+    <div class="card">
+        <h3>Treneri</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ime</th>
+                        <th>Prezime</th>
+                        <th>Specijalizacija</th>
+                        <th>Prosečna ocena</th>
+                        <th>Cena po satu</th>
+                        <th>Akcija</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(trainer of trainers; track trainer._id) {
+                        <tr [class.selected-row]="selectedTrainer?._id === trainer._id">
+                            <td>{{trainer.firstName}}</td>
+                            <td>{{trainer.lastName}}</td>
+                            <td>{{trainer.specialization}}</td>
+                            <td>{{trainer.averageRating}}</td>
+                            <td>{{trainer.pricePerHour}} RSD</td>
+                            <td>
+                                <button (click)="selectTrainer(trainer)">Izaberi</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        @if(trainers.length === 0) {
+            <p class="empty-state">Nema registrovanih trenera.</p>
+        }
+    </div>
+
+    <div class="card">
+        <h3>Tereni</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Naziv terena</th>
+                        <th>Tip terena</th>
+                        <th>Kapacitet</th>
+                        <th>Akcija</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(court of selectedCourts; track court.name) {
+                        <tr [class.selected-row]="selectedCourt == court.name">
+                            <td>{{court.name}}</td>
+                            <td>{{court.type}}</td>
+                            <td>{{court.capacity}}</td>
+                            <td>
+                                <button (click)="selectCourt(court.name)">Izaberi</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        @if(selectedCourts.length === 0) {
+            <p class="empty-state">Nema odabranih terena.</p>
+        }
+    </div>
+
+    @if(selectedTrainer && selectedCourt) {
+        <div class="card">
+            <h3>Zakažite trening</h3>
+            <p><strong>Trener:</strong> {{selectedTrainer.firstName}} {{selectedTrainer.lastName}}</p>
+            <p><strong>Teren:</strong> {{selectedCourt}}</p>
+            <p><strong>Cena po satu:</strong> {{selectedTrainer.pricePerHour}} RSD</p>
+
+            <form>
+                <div class="form-row">
+                    <label>Datum:</label>
+                    <input type="date" [(ngModel)]="trainingDate" name="trainingDate">
+                </div>
+                <div class="form-row">
+                    <label>Vreme od:</label>
+                    <select [(ngModel)]="trainingStartHour" name="trainingStartHour" (change)="updateTrainingEndHourOptions()">
+                        <option value="">Izaberi</option>
+                        @for(hour of availableStartHours; track hour) {
+                            <option [value]="hour">{{hour.toString().padStart(2, '0')}}:00</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label>Vreme do:</label>
+                    <select [(ngModel)]="trainingEndHour" name="trainingEndHour">
+                        <option value="">Izaberi</option>
+                        @for(hour of trainingEndHourOptions; track hour) {
+                            <option [value]="hour">{{hour.toString().padStart(2, '0')}}:00</option>
+                        }
+                    </select>
+                </div>
+
+                @if(trainingStartHour && trainingEndHour && getTotalPrice().valueOf() > 0) {
+                    <p class="total-price">Ukupna cena: <strong>{{getTotalPrice()}} RSD</strong></p>
+                }
+
+                <button type="button" (click)="scheduleTraining()">Zakaži trening</button>
+            </form>
+        </div>
+    }
+
+    @if(message) {
+        <p class="message">{{message}}</p>
+    }
+</div>

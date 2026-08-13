@@ -1,0 +1,328 @@
+.profile-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #1a5276;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* Profile View */
+.profile-view {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.profile-view button {
+    background-color: #1a5276;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+.profile-view button:hover {
+    background-color: #2471a3;
+}
+
+.profile-image {
+    border: 3px solid #1a5276;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 30px;
+    object-fit: cover;
+}
+
+.profile-info {
+    flex: 1;
+    min-width: 200px;
+}
+
+.profile-info p {
+    margin: 5px 0;
+}
+
+.sport-tag {
+    display: inline-block;
+    background-color: #1a5276;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    margin: 2px;
+}
+
+/* Forms */
+form {
+    background: none;
+    padding: 0;
+    box-shadow: none;
+}
+
+.form-row {
+    margin-bottom: 12px;
+}
+
+.form-row label {
+    display: block;
+    margin-bottom: 4px;
+    color: #555;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.form-row input,
+.form-row select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+select[multiple] {
+    min-height: 100px;
+}
+
+/* Image Buttons */
+.image-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.file-select-btn {
+    display: block;
+    text-align: center;
+    width: 200px;
+    margin: 0 10;
+    padding: 10px 20px;
+    background-color: #1a5276;
+    color: white !important;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: inherit;
+}
+
+.file-select-btn:hover {
+    background-color: #2471a3;
+}
+
+.avatar-btn {
+    display: block;
+    width: 240px;
+    margin: 0 10;
+    padding: 10px 20px;
+    background-color: #1a5276;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: inherit;
+}
+
+.avatar-btn:hover {
+    background-color: #2471a3;
+}
+
+.image-preview {
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Form Buttons */
+.form-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    height: 40px;
+}
+
+.save-btn {
+    background-color: #27ae60;
+    flex: 1;
+}
+
+.save-btn:hover {
+    background-color: #229954;
+}
+
+.cancel-btn {
+    background-color: #95a5a6;
+    flex: 1;
+}
+
+.cancel-btn:hover {
+    background-color: #7f8c8d;
+}
+
+/* Tables */
+table {
+    margin: 0;
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+th {
+    background-color: #1a5276;
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 14px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s;
+}
+
+th:hover {
+    background-color: #2471a3;
+}
+
+td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tr:hover {
+    background-color: #eaf2f8;
+}
+
+td button {
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+td button:hover {
+    background-color: #1a5276;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    color: #999;
+    padding: 15px;
+    font-style: italic;
+}
+
+.message {
+    text-align: center;
+    padding: 10px;
+    border-radius: 4px;
+    background: #e8f5e9;
+    color: #27ae60;
+    border-left: 4px solid #27ae60;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .table-wrapper table {
+        min-width: 700px;
+    }
+
+    .profile-container {
+        padding: 5px;
+    }
+
+    .card {
+        padding: 12px;
+    }
+
+    .profile-view {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .file-select-btn,
+    .avatar-btn {
+        width: 100%;
+        margin: 0;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+        height: auto;
+    }
+
+    th, td {
+        padding: 6px 8px;
+        white-space: nowrap;
+    }
+
+    td button {
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+
+    .form-row input,
+    .form-row select {
+        font-size: 13px;
+    }
+
+    h3 {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    td button {
+        display: block;
+        width: 100%;
+        margin: 2px 0;
+    }
+}

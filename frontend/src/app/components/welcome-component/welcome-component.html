@@ -1,0 +1,114 @@
+<div class="welcome-container">
+    
+    <div class="hero-section">
+        <h2>Dobrodošli na SportSphere Hub</h2>
+        <p>Trenutno je aktivno <strong>{{ numActive }}</strong> sportskih objekata!</p>
+    </div>
+
+    <div class="home-grid">
+        <div class="card">
+            <h3>TOP 3 najbolje ocenjena objekta:</h3>
+            <ol class="top-list">
+            @for(obj of bestRated; track obj.name) {
+                <li>
+                    <span class="facility-name">{{obj.name}}</span> 
+                    <span class="facility-city"> - {{obj.city}}</span> 
+                    <span class="likes-badge">{{obj.likes}} {{getLikeText(obj.likes.valueOf())}}</span>
+                </li>
+            }
+            </ol>
+        </div>
+        <div class="card">
+            <h3>Aktuelne promocije:</h3>
+            @if(promotions.length > 0){
+                @for(promotion of promotions; track promotion.name) {
+                    <div class="promo-item">
+                        <strong>{{ promotion.name }}</strong>
+                        <p>Objekat: {{ promotion.facilityName }}</p>
+                        <p>Popust: <span class = "discount-badge">{{ promotion.discountValue }}{{ promotion.discountType == "percentage" ? "%" : " RSD " }}</span></p>
+
+                        <p class = "promo-dates">Važi: {{ promotion.validFrom | date: "short" }} - {{ promotion.validTo | date: "short" }}</p>
+                    </div>
+                }
+            } 
+            @else{
+            <p class = "empty-state">Trenutno nema aktivnih promocija.</p>
+            }
+        </div>
+    </div>
+    <div class="card search-section">
+        <form>
+            Gradovi:
+            <select multiple [(ngModel)]="selectedCities" name="cities">
+                @for(city of cities; track city){
+                    <option [value]="city">{{city}}</option>
+                }
+            </select><br>
+            
+            Sport:
+            <select multiple [(ngModel)]="selectedSports" name="sports">
+                @for(sport of sports; track sport){
+                    <option [value]="sport">{{sport}}</option>
+                }
+            </select><br>
+
+            Tip terena:
+            <select [(ngModel)]="selectedType" name="type">
+                <option value="">Svi tereni</option>
+                <option value="otvoreni">Otvoreni</option>
+                <option value="zatvoreni">Zatvoreni</option>
+            </select><br>
+            
+            <button type="button" (click)="findFacilities()" class = "search-button">Pretraži</button>
+        </form>
+    </div>
+    @if(returnedFacilities.length > 0){
+        <div class = "card">
+            <table>
+                <thead>
+                    <tr>
+                        <th (click)="sort('name')">Naziv {{ getSortArrow('name') }}</th>
+                        <th (click)="sort('city')">Grad {{ getSortArrow('city') }}</th>
+                        <th>Sportovi</th>
+                        <th>Akcija</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(facility of returnedFacilities; track facility._id) {
+                        <tr>
+                            <td>{{ facility.name }}</td>
+                            <td>{{ facility.city }}</td>
+                            <td>{{ facility.sports.join(', ') }}</td>
+                            <td>
+                                <button (click) = "getDetails(facility)">Detalji</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    @if(returnedFacilities.length == 0 && searched) {
+        <p>Nema pronađenih objekata.</p>
+    }
+    @if(checkNotLoggedIn()){
+        <div class="card login-section">
+            <form>
+                Korisničko ime: <input type = "text" name = "username" [(ngModel)] = "username"><br>
+                Šifra: <input type = "password" name = "password" [(ngModel)] = "password"><br>
+                <button type = "button" (click) = "logIn()" class="login-btn">Uloguj se</button><br>
+                @if(message){<p class="error-message">{{message}}</p>}
+            </form>
+
+            @if(message != ""){
+            <p>
+                <a (click)="goToForgotPassword()" style="cursor: pointer; text-decoration: underline; color: #0000EE;">Zaboravljena lozinka?</a>
+            </p>
+            }
+
+            <p>
+                <a (click)="goToRegistration()" style="cursor: pointer; text-decoration: underline; color: #0000EE;">Registrujte se</a>
+            </p>
+        </div>
+    }
+</div>

@@ -1,0 +1,121 @@
+<div class="profile-container">
+    <div class="card">
+        <h3>Lični podaci</h3>
+        @if(!changingProfile) {
+            <div class="profile-view">
+                <img [src]="imagePreview" alt="Profile" class="profile-image">
+                <div class="profile-info">
+                    <p><strong>Korisničko ime:</strong> {{user.username}}</p>
+                    <p><strong>Ime:</strong> {{user.firstName}}</p>
+                    <p><strong>Prezime:</strong> {{user.lastName}}</p>
+                    <p><strong>Broj telefona:</strong> {{user.phone}}</p>
+                    <p><strong>Mejl:</strong> {{user.email}}</p>
+                    <p><strong>Omiljeni sportovi:</strong> 
+                        @for(sport of user.favoriteSports; track sport) {
+                            <span class="sport-tag">{{sport}}</span>
+                        }
+                    </p>
+                </div>
+                <button (click)="editProfile()">Uredi profil</button>
+            </div>
+        } @else {
+            <form>
+                <div class="form-row">
+                    <label>Korisničko ime:</label>
+                    <input type="text" [(ngModel)]="editUser.username" name="username" disabled>
+                </div>
+                <div class="form-row">
+                    <label>Ime:</label>
+                    <input type="text" [(ngModel)]="editUser.firstName" name="firstName">
+                </div>
+                <div class="form-row">
+                    <label>Prezime:</label>
+                    <input type="text" [(ngModel)]="editUser.lastName" name="lastName">
+                </div>
+                <div class="form-row">
+                    <label>Broj telefona:</label>
+                    <input type="text" [(ngModel)]="editUser.phone" name="phone">
+                </div>
+                <div class="form-row">
+                    <label>Mejl:</label>
+                    <input type="email" [(ngModel)]="editUser.email" name="email">
+                </div>
+                <div class="form-row">
+                    <label>Omiljeni sportovi (najvise 5):</label>
+                    <select multiple [(ngModel)]="editUser.favoriteSports" name="sport">
+                        @for(sport of availableSports; track sport) {
+                            <option [value]="sport" [disabled]="checkSportCondition(sport)">{{sport}}</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label>Profilna slika:</label>
+                    <div class="image-buttons">
+                        <label class="file-select-btn">
+                            Izaberi sliku
+                            <input type="file" (change)="onFileSelected($event)" accept="image/*" hidden>
+                        </label>
+                        <button type="button" class="avatar-btn" (click)="generateAvatar()">Generiši avatar</button>
+                    </div>
+                </div>
+                @if(editImagePreview) {
+                    <div class="image-preview">
+                        <img [src]="editImagePreview" alt="Preview" class="profile-image">
+                    </div>
+                }
+                <div class="form-buttons">
+                    <button type="button" (click)="onSubmit()" class="save-btn">Sačuvaj izmene</button>
+                    <button type="button" (click)="onReject()" class="cancel-btn">Odbaci izmene</button>
+                </div>
+            </form>
+        }
+    </div>
+
+    @if(user.employeeInfo) {
+        <div class="card">
+            <h3>Podaci o pravnom licu</h3>
+            <p><strong>Naziv objekta:</strong> {{user.employeeInfo.facilityName}}</p>
+            <p><strong>Adresa sedišta:</strong> {{user.employeeInfo.facilityAddress}}</p>
+            <p><strong>Matični broj:</strong> {{user.employeeInfo.registrationNumber}}</p>
+            <p><strong>PIB:</strong> {{user.employeeInfo.pib}}</p>
+        </div>
+    }
+
+    <div class="card">
+        <h3>Moji objekti</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Naziv</th>
+                        <th>Grad</th>
+                        <th>Sportovi</th>
+                        <th>Tereni/Hale</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if(myFacilities.length > 0) {
+                        @for(facility of myFacilities; track facility.name) {
+                            <tr>
+                                <td>{{facility.name}}</td>
+                                <td>{{facility.city}}</td>
+                                <td>{{facility.sports.join(', ')}}</td>
+                                <td>
+                                    @for(court of facility.courts; track court.name) {
+                                        {{court.name}} ({{court.type}}) - Kap: {{court.capacity}}<br>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    } @else {
+                        <tr><td colspan="4">Ne vodite nijedan objekat.</td></tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    @if(message) {
+        <p class="message">{{message}}</p>
+    }
+</div>

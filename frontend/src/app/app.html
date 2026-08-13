@@ -1,0 +1,55 @@
+
+<header class = "header">
+    
+    <div class = "headerLeft">
+        <h3>SportSphere Hub</h3>
+        @if(checkLoggedIn()){
+            @if(emloyedLoggedIn()){
+                <select #pageSelect (change)="visitWebPage(pageSelect.value)" name = "visitWebPage">
+                    <option value = "welcome">Početna stranica</option>
+                    <option value = "employedProfileOverview">Profil</option>
+                    <option value = "employedFacilityCreation">Dodavanje i ažuriranje objekata</option>
+                    <option value = "employedReservation">Rezervacije i Treninzi</option>
+                    <option value = "employedPromotionShop">Promocije i prodavnica</option>
+                    <option value = "employedCalendar">Kalendar</option>
+                    <option value = "employedReport">Generisanje izveštaja</option>
+                </select>
+            }
+            @else if(athleteLoggedIn()){
+                <select #pageSelect (change)="visitWebPage(pageSelect.value)" name = "visitWebPage">
+                    <option value = "welcome">Početna stranica</option>
+                    <option value = "athleteProfileOverview">Profil</option>
+                    <option value = "athleteReservation">Pretraga i rezervacije</option>
+                    <option value = "athletePlayerSearch">Pronalaženje igrača</option>
+                    <option value = "athleteIndividualTraining">Individualni trening</option>
+                    <option value = "athleteGradeFacilities">Ocene</option>
+                    <option value = "athleteShop">Prodavnica</option>
+                    <option value = "athleteStatistics">Statistika</option>
+                </select>
+            }
+        }
+    </div>
+    <div class = "headerRight"> 
+    
+        @if(userService.getPreviousPath() != ""){
+            <button (click) = "back()">Nazad</button>
+        }
+        @if(checkLoggedIn()){
+            <button (click) = "logOut()">Izloguj se</button>
+        }
+
+        @if(checkLoggedIn()){
+            <div class="userBadge">
+                <span class="userName">{{ userService.getUser().firstName }}</span>
+                <span class="userInitials">{{ getUserInitials() }}</span>
+            </div>
+        }
+    </div>
+
+</header>
+<div class = "router">
+<router-outlet></router-outlet>
+</div>
+<footer class = "footer">
+    <div class = "footerContent">SportSphere Hub</div>
+</footer>

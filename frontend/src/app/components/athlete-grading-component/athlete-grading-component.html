@@ -1,0 +1,46 @@
+<div class="rating-container">
+    @if(commentableFacilities.length > 0) {
+        <div class="card">
+            <h3>Ocenite posećeni objekat</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Naziv</th>
+                            <th>Grad</th>
+                            <th>Sportovi</th>
+                            <th>Akcija</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for(facility of commentableFacilities; track facility._id) {
+                            <tr>
+                                <td>{{facility.name}}</td>
+                                <td>{{facility.city}}</td>
+                                <td>{{facility.sports.join(', ')}}</td>
+                                <td>
+                                    @if(facility !== selectedFacility) {
+                                        <button (click)="likeFacility(facility)">Like</button>
+                                        <button (click)="dislikeFacility(facility)">Dislike</button>
+                                        <button (click)="commentFacility(facility)">Komentar</button>
+                                    } @else {
+                                        <textarea name="komentar" [(ngModel)]="commentText" rows="2" placeholder="Unesite komentar..."></textarea>
+                                        <button (click)="submitFacilityComment(facility)">Pošalji</button>
+                                        <button (click)="discardFacilityComment(facility)">Odustani</button>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            @if(message) {
+                <p class="message">{{message}}</p>
+            }
+        </div>
+    } @else {
+        <div class="card">
+            <p class="empty-state">Nema vise objekata koje mozete oceniti!</p>
+        </div>
+    }
+</div>

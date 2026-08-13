@@ -1,0 +1,19 @@
+<div class="login-container">
+    <div class="card">
+        <h3>Prijava na sistem</h3>
+        <form>
+            <div class="form-row">
+                <label>Korisnicko ime:</label>
+                <input type="text" name="username" [(ngModel)]="username">
+            </div>
+            <div class="form-row">
+                <label>Sifra:</label>
+                <input type="password" name="password" [(ngModel)]="password">
+            </div>
+            <button type="button" (click)="logIn()">Uloguj se</button>
+        </form>
+        @if(message) {
+            <p class="error-message">{{message}}</p>
+        }
+    </div>
+</div>

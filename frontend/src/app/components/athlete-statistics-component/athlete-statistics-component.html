@@ -1,0 +1,26 @@
+<div class="stats-grid">
+    <div class="chart-card">
+        <h3>Sportovi po učestalosti</h3>
+        <div class="chart-container">
+            <canvas id="sports"></canvas>
+        </div>
+    </div>
+    
+    <div class="chart-card">
+        <h3>Mesečna aktivnost - {{ selectedYear | date: 'yyyy' }}</h3>
+        <div class="chart-container">
+            <canvas id="monthlyChart"></canvas>
+        </div>
+        <div class="year-nav">
+            <button (click)="previousYear()">Prethodna</button>
+            <button (click)="nextYear()">Sledeća</button>
+        </div>
+    </div>
+
+    <div class="chart-card">
+        <h3>Potrošnja na opremu</h3>
+        <div class="chart-container">
+            <canvas id="equipmentChart"></canvas>
+        </div>
+    </div>
+</div>
